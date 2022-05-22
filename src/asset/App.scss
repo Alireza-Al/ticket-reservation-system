@@ -1,5 +1,8 @@
+@import './Defaults/defaults';
+
 .App {
   text-align: center;
+  font-family: $global-font-family;
 }
 
 .App-logo {
