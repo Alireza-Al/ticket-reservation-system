@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-        Ticket Reservation
+        این صفحه اصلی است
       </h1>
     </div>
   );
