@@ -1,0 +1,57 @@
+// Register form style with the help of sign class.
+.sign-in {
+	@include sign;
+	min-height: 750px;
+}
+
+// Login form style with the help of sign class.
+.sign-up {
+	@include sign;
+	min-height: 470px;
+}
+
+// Style the top part of the login and registration form.
+.sign-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 117px;
+	border-radius: 20px 20px 0 0;
+	background-color: $home-login-background;
+	color: $global-text-color;
+
+	// Sign header title Styles.
+	h1,
+	h4 {
+		margin: 0 40px 0 0;
+		font-weight: 200;
+		text-align: right;
+	}
+
+	h1 {
+		font-size: 23px;
+		line-height: 36px;
+	}
+
+	h4 {
+		font-size: 15px;
+		line-height: 18px;
+	}
+}
+
+// Style the bottom part of the login and registration form.
+.sign-footer {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	align-items: flex-end;
+	width: 90%;
+	p {
+		cursor: pointer;
+		text-align: right;
+		font-weight: 200;
+		font-size: 16px;
+		border-bottom: 1px solid #000;
+	}
+}
