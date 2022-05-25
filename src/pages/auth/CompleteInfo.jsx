@@ -15,7 +15,7 @@ function CompleteInfo() {
 	//Create this function to complete user information and send API requests
 	const completeInfo = () => {};
 
-	//Create complete user information component
+	//Create complete user information page
 	return (
 		<div className="sign-in">
 			<div className="sign-header">

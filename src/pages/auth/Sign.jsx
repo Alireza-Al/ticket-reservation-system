@@ -16,7 +16,7 @@ function Sign() {
 	//Create this function to register or login and send API requests
 	const loginOrRegister = () => {};
 
-	//Create sign(Register or Login) component
+	//Create sign(Register or Login) page
 	return (
 		<div className="sign-up">
 			<div className="sign-header">

@@ -15,7 +15,7 @@ function ConfirmSign() {
 	//Create this function to confirm sign in or sign up and send API requests
 	const confirmation = () => {};
 
-	//Create confirmation component
+	//Create confirmation page
 	return (
 		<div className="sign-up">
 			<div className="sign-header">
