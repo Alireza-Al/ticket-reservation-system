@@ -1,11 +1,10 @@
 import '../asset/App.scss';
+import Home from '../pages/homePage/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>
-        این صفحه اصلی است
-      </h1>
+      <Home />
     </div>
   );
 }

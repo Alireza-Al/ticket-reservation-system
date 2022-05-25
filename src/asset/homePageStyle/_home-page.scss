@@ -1,0 +1,174 @@
+.home {
+    transform: all .5s ease;
+}
+
+.search-box-container {
+    background-color: white;
+    width: 100%;
+    height: 500px;
+}
+
+// search-box background (the orange one)
+.search-box-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff4e00;
+    width: 100%;
+    height: 400px;
+    border-radius: 162px 0;
+}
+
+// search-box self (the yellow one)
+.search-box-self {
+    width: 80%;
+    height: 300px;
+    background-color: #fed000;
+    margin-top: 250px;
+    border-radius: 63px;
+}
+
+.item-selection-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100px;
+}
+
+.train-selector-container {
+    margin: 0px 150px;
+}
+// the stuff in all three selectors
+.plane-selector-container,
+.train-selector-container,
+.bus-selector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // will do it for all the icons
+    span {
+        font-size: 2rem;
+    }
+    .plane-icon {
+        color: $plane-icon-color;
+    }
+    .train-icon {
+        color: $train-icon-color;
+    }
+    .bus-icon {
+        color: $bus-icon-color;
+    }
+    button {
+        font-family: $global-font-family;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+}
+
+.slot-container {
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    align-items: center;
+    justify-content: start;
+    padding: {
+        top: 55px;
+        right:70px;
+        left: 70px;
+    };
+    div { // all divs in all three search boxes
+        margin-left: 25px;
+    }
+    input { // all inputs in all three search boxes
+        width: 150px;
+        border: 1px solid $home-login-background;
+        font-family: $global-font-family;
+        &::placeholder {
+            text-align: center;
+        }
+    }
+    button { // search btn
+        background-color: $button-color;
+        border: none;
+        font-family: $global-font-family;
+        width: 150px;
+        height: 47px;
+        border-radius: 13px;
+        cursor: pointer;
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 5px;
+    background-color: #ff4e00;
+}
+
+.slider-container {
+    height: 900px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .slider {
+        width: 1100px;
+        height: 600px;
+        background-color: #d0d0d0;
+        border-radius: 40px;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    direction: rtl;
+    .right-side {
+        font-family: $global-font-family;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: large;
+        padding: {
+            top: 40px;
+            right: 50px;
+        };
+        width: 60%;
+        background-color: $home-login-background;
+        border-radius: 168px 0px 0px 0px;
+        p {
+            margin-top: 30px;
+        }
+        .address {
+            margin-top: 80px;
+        }
+    }
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 40%;
+        background-color: white;
+        .icon-container {
+            height: 267px;
+            background-color: white;
+            padding: 70px 150px;
+            border-radius: 0px 0px 128px 0px;
+            position: absolute;
+            .tracketIcon {
+                width: 350px;
+                height: 150px;
+            }
+        }   
+        .part-under-icon {
+            background-color: $home-login-background;
+            height: 125px;
+        } 
+    }
+}
