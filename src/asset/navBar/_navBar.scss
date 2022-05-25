@@ -1,0 +1,68 @@
+.navbar {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    height: 75px;
+    padding: 11px 10px;
+    .nav-menu { // wrapper of all menu-items inside nav
+        width: 100%;
+        display: flex;
+        li { // all li should have these styles
+            display: inline;
+            list-style-type: none;
+            padding: {
+                top: 5px
+            };
+            cursor: pointer;
+            a { // all a in li should have these styles 
+                color: black;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: 400;
+                border-left: 1px solid black; // a seprator
+                padding-left: 5px;
+            }
+            span {
+                font-size: 20px;
+                margin: {
+                    right: 5px;
+                    left: 10px;
+                };
+                padding-top: 5px;
+            }
+        }
+        .nav-item { // all nav-items except the tracket icon
+            margin: {
+                top: 11px;
+                right: 40px;
+            };
+        }
+        .plane-text {
+            margin-right: 41px;
+        }
+        .plane-icon {
+            color: $plane-icon-color;
+        }
+        .train-icon {
+            color: 	$train-icon-color;
+        }
+        .bus-icon {
+            color: $bus-icon-color;
+        }
+        .login-register {
+            margin: {
+                top: 11px;
+                right: 50%;
+            };
+            a {
+                border: none;
+            }
+        }
+    }
+}
+
+.tracketIcon {
+        width: 150.5px;
+        height: 50.5px;
+}
