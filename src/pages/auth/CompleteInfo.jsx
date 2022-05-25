@@ -12,10 +12,10 @@ function CompleteInfo() {
 		birthDate: "",
 	});
 
-	//Create this function to register and send API requests
+	//Create this function to complete user information and send API requests
 	const completeInfo = () => {};
 
-	//Create Register component
+	//Create complete user information component
 	return (
 		<div className="sign-in">
 			<div className="sign-header">

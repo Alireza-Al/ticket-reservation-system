@@ -13,10 +13,10 @@ function Sign() {
 		email: "",
 	});
 
-	//Create this function to register and send API requests
+	//Create this function to register or login and send API requests
 	const loginOrRegister = () => {};
 
-	//Create Login component
+	//Create sign(Register or Login) component
 	return (
 		<div className="sign-up">
 			<div className="sign-header">
