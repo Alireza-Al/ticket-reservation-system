@@ -7,7 +7,7 @@
 // Login form style with the help of sign class.
 .sign-up {
 	@include sign;
-	min-height: 470px;
+	min-height: 430px;
 }
 
 // Style the top part of the login and registration form.
@@ -44,9 +44,11 @@
 .sign-footer {
 	display: flex;
 	flex-direction: column;
-	align-self: flex-start;
-	align-items: flex-end;
-	width: 90%;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	width: 100%;
+	height: 313px;
 	p {
 		cursor: pointer;
 		text-align: right;
