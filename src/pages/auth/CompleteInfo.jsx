@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function CompleteInfo() {
 	//Create array for  titles
-	const titles = ["خوش آمدید", "اطلاعات خود را تکمیل نمایید"];
+	const titles = ["خوش آمدید", "اطلاعات خود را تکمیل نمایید", "تکمیل اطلاعات"];
 
 	//Create this state to control inputs and use them to send API requests
 	const [user, setUser] = useState({
@@ -22,7 +22,7 @@ function CompleteInfo() {
 				<h1>{titles[0]}</h1>
 				<h4>{titles[1]}</h4>
 			</div>
-			<form className="sign-footer" onSubmit={completeInfo}>
+			<form className="sign-in-footer" onSubmit={completeInfo}>
 				<input
 					type="text"
 					placeholder="نام و نام خانوادگی"
