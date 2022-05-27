@@ -9,6 +9,14 @@ body {
 	font-family: $global-font-family;
 }
 
+//Create this style for all button
+button{
+	cursor: pointer;
+	background-color: $home-login-background;
+	color: $global-text-color;
+	border: none;
+}
+
 //Create a this class to use in sign-in and sign-up
 @mixin sign {
 	display: flex;
@@ -24,11 +32,7 @@ body {
 	button {
 		width: 169px;
 		height: 34px;
-		border: none;
 		border-radius: 20px;
-		cursor: pointer;
-		background-color: $home-login-background;
-		color: $global-text-color;
 		font-weight: 200;
 		font-size: 16px;
 	}
@@ -67,3 +71,4 @@ input {
 @import "./homePageStyle/home-page";
 @import "./login-registerPageStyle/sign";
 @import "./resultPageStyle/ticketInRes";
+@import "./resultPageStyle//resultPage";
