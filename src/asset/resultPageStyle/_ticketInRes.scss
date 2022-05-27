@@ -1,48 +1,72 @@
 .ticket-result {
 	max-width: 700px;
 	height: 150px;
-    width: 100%;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	background-color: hsl(0, 0%, 85%);
 	border-radius: 35px;
-    direction: rtl;
+	direction: rtl;
 
-    .info{
-        display: flex;
-        max-width: 500px;
-        width: 100%;
-        height: 100%;
-        border-left: 2px solid #000;
+	.info {
+		display: flex;
+		max-width: 500px;
+		width: 100%;
+		height: 100%;
+		border-left: 2px solid #000;
 
-        .ticket-company {
-            width: 150px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+		.ticket-company {
+			width: 150px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
-            img {
-                width: 56px;
-                height: 56px;
-                border-radius: 28px;
-            }
+			img {
+				width: 56px;
+				height: 56px;
+				border-radius: 28px;
+			}
+		}
+	}
 
-        }
-    }
+	.details {
+		width: 340px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 
-    .details{
-        width: 340px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+		.row {
+			width: 100%;
+			height: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
 
-        .location{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-    }
+			h5 {
+				color: $train-icon-color;
+			}
+		}
+	}
+
+	.price {
+		width: 200px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		h3 {
+			color: $button-color;
+		}
+
+		button {
+			width: 136px;
+			height: 42px;
+			font-size: 13px;
+            border-radius: 16px;
+		}
+	}
 }
