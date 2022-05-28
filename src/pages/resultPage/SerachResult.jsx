@@ -22,7 +22,6 @@ function SearchResult() {
 	return (
 		<div className="search-result">
 			<div className="result-header">
-				<NavBar />
 				<div className="search-box">
 					<FontAwesomeIcon
 						className="oc-icon"
