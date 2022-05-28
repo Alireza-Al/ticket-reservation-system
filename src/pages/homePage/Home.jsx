@@ -1,5 +1,4 @@
-import React from "react";
-import NavBar from "../../component/navBar/NavBar";
+import React from 'react';
 import Icon from "../../tracketIcon/Icon";
 import SearchBox from "./searchBox/SearchBox";
 import Slider from "./slider/Slider";
