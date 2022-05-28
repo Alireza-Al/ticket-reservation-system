@@ -41,7 +41,7 @@ function Sign() {
 								setEmail({ ...email, email: e.target.value })
 							}
 						/>
-						<button type="button">{titles[2]}</button>
+						<button type="submit">{titles[2]}</button>
 					</form>
 				</div>
 			)}
