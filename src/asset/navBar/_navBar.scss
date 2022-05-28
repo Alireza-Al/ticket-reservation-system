@@ -8,6 +8,7 @@
     .nav-menu { // wrapper of all menu-items inside nav
         width: 100%;
         display: flex;
+        justify-content: space-between;
         li { // all li should have these styles
             display: inline;
             list-style-type: none;
@@ -51,10 +52,7 @@
             color: $bus-icon-color;
         }
         .login-register {
-            margin: {
-                top: 11px;
-                right: 50%;
-            };
+            margin-top: 11px;
             a {
                 border: none;
             }

@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from '../../component/navBar/NavBar'
 import Icon from '../../tracketIcon/Icon'
+import SearchResult from '../resultPage/SerachResult'
 import SearchBox from './searchBox/SearchBox'
 import Slider from './slider/Slider'
 
