@@ -1,13 +1,13 @@
 // Register form style with the help of sign class.
 .sign-in {
 	@include sign;
-	min-height: 700px;
+	height: 700px;
 }
 
 // Login form style with the help of sign class.
 .sign-up {
 	@include sign;
-	min-height: 430px;
+	height: 430px;
 }
 
 // Style the top part of the login and registration form.
