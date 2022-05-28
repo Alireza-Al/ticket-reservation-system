@@ -66,7 +66,11 @@ input {
 	font-weight: 200;
 	font-size: 15px;
 	line-height: 23px;
-	text-align: right;
+	text-align: left;
+	
+	&::placeholder{
+		text-align: right;
+	}
 }
 
 //Create this class for all pages that component on center
