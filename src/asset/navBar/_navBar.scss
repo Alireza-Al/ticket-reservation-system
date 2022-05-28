@@ -53,6 +53,9 @@
         }
         .login-register {
             margin-top: 11px;
+            .user-icon {
+                color: $home-login-background;
+            }
             a {
                 border: none;
             }
