@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ConfirmSign from "./ConfirmSign";
 
 function Sign() {
 	//Create array for  titles
@@ -13,26 +14,37 @@ function Sign() {
 		email: "",
 	});
 
+	//Create this state to change page without router
+	const [submitPage, setSubmitPage] = useState(false);
+
 	//Create this function to register or login and send API requests
-	const loginOrRegister = () => {};
+	const loginOrRegister = () => {
+		setSubmitPage(true);
+	};
 
 	//Create sign(Register or Login) page
 	return (
-		<div className="sign-up">
-			<div className="sign-header">
-				<h1>{titles[0]}</h1>
-				<h4>{titles[1]}</h4>
-			</div>
-			<form className="sign-footer" onSubmit={loginOrRegister}>
-				<input
-					type="email"
-					placeholder="ایمیل"
-					onChange={(e) =>
-						setEmail({ ...email, email: e.target.value })
-					}
-				/>
-				<button type="button">{titles[2]}</button>
-			</form>
+		<div className="container">
+			{submitPage ? (
+				<ConfirmSign />
+			) : (
+				<div className="sign-up">
+					<div className="sign-header">
+						<h1>{titles[0]}</h1>
+						<h4>{titles[1]}</h4>
+					</div>
+					<form className="sign-footer" onSubmit={loginOrRegister}>
+						<input
+							type="email"
+							placeholder="ایمیل"
+							onChange={(e) =>
+								setEmail({ ...email, email: e.target.value })
+							}
+						/>
+						<button type="submit">{titles[2]}</button>
+					</form>
+				</div>
+			)}
 		</div>
 	);
 }

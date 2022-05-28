@@ -66,8 +66,22 @@ input {
 	font-weight: 200;
 	font-size: 15px;
 	line-height: 23px;
-	text-align: right;
+	text-align: left;
+	
+	&::placeholder{
+		text-align: right;
+	}
 }
+
+//Create this class for all pages that component on center
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 @import "./homePageStyle/home-page";
 @import "./login-registerPageStyle/sign";
 @import "./resultPageStyle/ticketInRes";

@@ -16,7 +16,12 @@ function SearchBox() {
 
     return (
         <div className="search-box-container">
-            <div className="search-box-back">
+            <div className="search-box-back" style={{
+                backgroundColor:
+                    state.train ? '#ff7600'
+                        : state.bus ? '#ff9700'
+                            : '#ff4e00'
+            }}>
                 <div className="search-box-self">
                     <div className="item-selection-container">
                         <div className="plane-selector-container">  {/* plane toggle btn*/}
