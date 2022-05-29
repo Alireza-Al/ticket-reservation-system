@@ -1,8 +1,11 @@
 import React from 'react'
+import ShowTickets from '../../component/ticket/ShowTickets'
 
 function PurchaseHistory() {
   return (
-    <div>PurchaseHistory</div>
+    <div>
+        <ShowTickets />
+    </div>
   )
 }
 
