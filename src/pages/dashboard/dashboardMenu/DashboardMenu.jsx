@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 function DashboardMenu(props) {
 
-    const [state, setState] = useState({})
+    const [state, setState] = useState({
+        userData: true
+    })
 
     useEffect(() => {
         props.active(state)
@@ -16,7 +18,7 @@ function DashboardMenu(props) {
                 onClick={() => {
                     setState({
                         userData: true,
-                        pocket: false,
+                        wallet: false,
                         history: false
                     })
                 }}
@@ -32,11 +34,11 @@ function DashboardMenu(props) {
                     setState({
                         dahsboard: false,
                         userData: false,
-                        pocket: true,
+                        wallet: true,
                         history: false
                     })
                 }}
-                style={{ backgroundColor: state.pocket ? '#FF4E00' : 'initial' }}>
+                style={{ backgroundColor: state.wallet ? '#FF4E00' : 'initial' }}>
                 {/* whenever each state is true the color will change by the click */}
                 <span>
                     کیف پول
@@ -47,7 +49,7 @@ function DashboardMenu(props) {
                 onClick={() => {
                     setState({
                         userData: false,
-                        pocket: false,
+                        wallet: false,
                         history: true
                     })
                 }}
