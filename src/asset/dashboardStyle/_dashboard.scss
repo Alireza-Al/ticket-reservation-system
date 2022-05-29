@@ -11,4 +11,28 @@
     width: 1229px;
     height: 600px;
     background-color: white;
+    border-radius: 37px;
+    direction: rtl;
+    display: flex;
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #F59948;
+    height: 100%;
+    width: 200px;
+    border-radius: 0px 44px 44px 0px;
+}
+
+.dashboard-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid white;
+    span {
+        font-weight: 500;
+    }
 }
