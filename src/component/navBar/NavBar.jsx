@@ -18,9 +18,7 @@ function NavBar() {
 					</i>
 				</li>
 				<li className="nav-item">
-					<a href="/#plane" className="plane-text" onClick={() => {
-						localStorage.setItem('plane-clicked', true)
-					}}>
+					<a href="/#plane" className="plane-text">
 						پرواز
 					</a>
 					<span className="plane-icon">
