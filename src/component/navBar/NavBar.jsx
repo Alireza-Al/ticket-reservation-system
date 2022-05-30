@@ -46,8 +46,8 @@ function NavBar() {
 					<span className="user-icon">
 						<FontAwesomeIcon icon={faUser} />
 					</span>
-					<a href="#" className="">
-						<Link to="/users/login">ورود/ثبت نام</Link>
+					<a href="/users/login" className="">
+						ورود/ثبت نام
 					</a>
 				</li>
 			</ul>
