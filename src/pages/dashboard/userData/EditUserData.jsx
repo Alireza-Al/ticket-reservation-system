@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from '../../../api/axios';
 
 function EditUserData(props) {
 
@@ -6,6 +7,24 @@ function EditUserData(props) {
 
     const HandleSubmit = (e) => {
         e.preventDefault();
+        const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
+
+		const config = {
+			headers: {
+				Authorization: token,
+			},
+		};
+        axios
+            .put(`/customer/${props.id}/`, {
+                first_name: info.name,
+                last_name: info.lastName,
+                national_code: info.idNum,
+                birth_date: info.birthDate
+            },config)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.error(err))
     }
 
     return (
@@ -44,6 +63,30 @@ function EditUserData(props) {
                             setInfo({
                                 ...info,
                                 idNum: e.target.value
+                            })
+                        }} />
+                </label>
+                <label htmlFor="">
+                    {props.containerNames[3]}
+                    <input
+                        type="email"
+                        // value={props.initValue.idNum}
+                        onChange={(e) => {
+                            setInfo({
+                                ...info,
+                                email: e.target.value
+                            })
+                        }} />
+                </label>
+                <label htmlFor="">
+                    {props.containerNames[4]}
+                    <input
+                        type="date"
+                        // value={props.initValue.idNum}
+                        onChange={(e) => {
+                            setInfo({
+                                ...info,
+                                birthDate: e.target.value
                             })
                         }} />
                 </label>
