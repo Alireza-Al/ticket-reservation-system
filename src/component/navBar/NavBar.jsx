@@ -16,10 +16,6 @@ function NavBar(props) {
 		props.getUserInfo();
 	}, []);
 
-	useEffect(() => {
-		console.log(props.user[0])
-	}, [props.user]);
-
 	return (
 		<nav className="navbar">
 			<ul className="nav-menu">

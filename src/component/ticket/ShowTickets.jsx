@@ -1,7 +1,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import axios from "../../api/axios";
 
-function ShowTickets() {
+function ShowTickets(props) {
+	const buyTicket = () => {
+		const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
+
+		const config = {
+			headers: {
+				Authorization: token,
+			},
+		};
+		axios
+			.post(`/ticket/${props.ticket.id}/reserve/`, { count: 1 }, config)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
 	// Create show tickets in result page component
 	return (
 		<div className="ticket-result">
@@ -13,24 +32,24 @@ function ShowTickets() {
 						src="https://airhex.com/images/airline-logos/ata-airlines.png"
 						alt=""
 					/>
-					<h3>هواپیمایی آتا</h3>
+					<h3>{props.ticket.company}</h3>
 				</div>
 				{/* this div have editional information of the ticket(data, code, ...) */}
 				<div className="details">
 					<div className="row">
-						<p>تبریز</p>
+						<p>{props.ticket.departure}</p>
 						<FontAwesomeIcon icon={faArrowLeftLong} />
-						<p>تهران</p>
+						<p>{props.ticket.destination}</p>
 					</div>
 					<div className="row">
-						<h4>شماره بلیط:54546</h4>
-						<h5>4صندلی باقی مانده</h5>
+						<h4>شماره بلیط:{props.ticket.code}</h4>
+						<h5>{props.ticket.count}صندلی باقی مانده</h5>
 					</div>
 				</div>
 			</div>
 			<div className="price">
-				<h3>9,565,564ریال</h3>
-				<button>انتخاب بلیط</button>
+				<h3>{props.ticket.price}ریال</h3>
+				<button onClick={() => buyTicket()}>انتخاب بلیط</button>
 			</div>
 		</div>
 	);

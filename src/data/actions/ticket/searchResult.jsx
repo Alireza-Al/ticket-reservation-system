@@ -2,12 +2,7 @@ import axios from "../../../api/axios";
 
 const searchResult =
 	(
-		ticket = {
-			departure: "",
-			destination: "",
-			start_time: "",
-			type: 0,
-		}
+		ticket = {}
 	) =>
 	(dispatch) => {
 
