@@ -7,14 +7,13 @@ import {
 	faTrain,
 	faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 function NavBar() {
 	return (
 		<nav className="navbar">
 			<ul className="nav-menu">
-				<li>
-					<i className="tracket-icon">
+				<li className="tracket-icon">
+					<i>
 						<Icon />
 					</i>
 				</li>
