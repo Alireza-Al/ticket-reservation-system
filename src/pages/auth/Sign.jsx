@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ConfirmSign from "./ConfirmSign";
+import axios from "../../api/axios";
 
 function Sign() {
 	//Create array for  titles
@@ -18,15 +19,22 @@ function Sign() {
 	const [submitPage, setSubmitPage] = useState(false);
 
 	//Create this function to register or login and send API requests
-	const loginOrRegister = () => {
-		setSubmitPage(true);
+	const loginOrRegister = (e) => {
+		e.preventDefault();
+		axios.post("/auth/email/", email).then((response) => {
+			if(response.status === 200) {
+				setSubmitPage(true);
+			}
+		}).catch((error) => {
+			console.log(error);
+		});
 	};
 
 	//Create sign(Register or Login) page
 	return (
 		<div className="container">
 			{submitPage ? (
-				<ConfirmSign />
+				<ConfirmSign email={email.email} />
 			) : (
 				<div className="sign-up">
 					<div className="sign-header">
