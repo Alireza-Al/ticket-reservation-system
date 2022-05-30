@@ -8,7 +8,6 @@ function DashboardMenu(props) {
 
     useEffect(() => {
         props.active(state)
-        console.log(state);
     }, [state])
 
     return (
