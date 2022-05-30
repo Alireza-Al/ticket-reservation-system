@@ -4,22 +4,22 @@ const getUserInfo = () => (dispatch) => {
 	const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
 
 	const config = {
-		header: {
-			Authentication: token,
+		headers: {
+			Authorization: token,
 		},
 	};
 
 	axios.get("/customer/", config).then((response) => {
 
-		console.log(response.data);
+		console.log(response);
 
-		const id = response.data.id;
-		const firstName = response.data.first_name;
-		const lastName = response.data.last_name;
-		const email = response.data.email;
-		const nationalCode = response.data.national_code;
-		const birthDate = response.data.birth_date;
-		const isRegistered = response.data.is_registered;
+		const id = response.data[0].id;
+		const firstName = response.data[0].first_name;
+		const lastName = response.data[0].last_name;
+		const email = response.data[0].email;
+		const nationalCode = response.data[0].national_code;
+		const birthDate = response.data[0].birth_date;
+		const isRegistered = response.data[0].is_registered;
 
 		dispatch({
 			type: "GET_USER_INFO",
