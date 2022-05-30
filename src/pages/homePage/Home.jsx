@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from "../../tracketIcon/Icon";
-import SearchBox from "./searchBox/SearchBox";
+import SearchBox from "../../component/searchBox/SearchBox";
 import Slider from "./slider/Slider";
 
 function Home() {

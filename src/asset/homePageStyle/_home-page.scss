@@ -60,12 +60,16 @@
     .bus-icon {
         color: $bus-icon-color;
     }
-    button {
+    button { // all the search box toggle buttons 
         font-family: $global-font-family;
         background-color: transparent;
         border: none;
         cursor: pointer;
         font-size: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -92,20 +96,26 @@
         }
     }
     button { // search btn
-        background-color: $button-color;
+        background-color: $home-login-background;
         border: none;
         font-family: $global-font-family;
         width: 150px;
         height: 47px;
         border-radius: 13px;
         cursor: pointer;
+        transition: background .3s ease;
+        &:hover {
+            background-color: $button-color;
+        }
+
     }
 }
 
 .divider {
     width: 100%;
     height: 5px;
-    background-color: #ff4e00;
+    background-color: $home-login-background;
+    transition: background .3s ease;
 }
 
 .slider-container {

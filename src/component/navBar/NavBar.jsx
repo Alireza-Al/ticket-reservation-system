@@ -18,7 +18,7 @@ function NavBar() {
 					</i>
 				</li>
 				<li className="nav-item">
-					<a href="#" className="plane-text">
+					<a href="/#plane" className="plane-text">
 						پرواز
 					</a>
 					<span className="plane-icon">
@@ -26,7 +26,7 @@ function NavBar() {
 					</span>
 				</li>
 				<li className="nav-item">
-					<a href="#" className="train-text">
+					<a href="/#train" className="train-text">
 						قطار
 					</a>
 					<span className="train-icon">
@@ -34,7 +34,7 @@ function NavBar() {
 					</span>
 				</li>
 				<li className="nav-item">
-					<a href="#" className="bus-text">
+					<a href="/#bus" className="bus-text">
 						اتوبوس
 					</a>
 					<span className="bus-icon">
