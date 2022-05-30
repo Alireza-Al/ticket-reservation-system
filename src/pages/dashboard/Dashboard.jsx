@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DashboardMenu from './dashboardMenu/DashboardMenu'
 import PurchaseHistory from './PurchaseHistory'
-import UserData from './UserData'
+import UserData from './userData/UserData'
 import Wallet from './Wallet'
 
 function Dashboard() {

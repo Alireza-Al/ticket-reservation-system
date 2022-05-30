@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDown, faCircleUp } from "@fortawesome/free-solid-svg-icons";
-import PlaneSearch from "../homePage/searchBox/plane/PlaneSearch";
+import PlaneSearch from "../../component/searchBox/plane/PlaneSearch";
 import NavBar from "./../../component/navBar/NavBar";
 import { useState } from "react";
 import ShowTickets from "../../component/ticket/ShowTickets";

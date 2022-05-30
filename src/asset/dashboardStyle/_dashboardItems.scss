@@ -18,6 +18,10 @@ button {
     height: 47px;
     border-radius: 13px;
     cursor: pointer;
+    transition: background .3s ease;
+    &:hover {
+        background-color: $button-color;
+    }
 }
 
 .price-input {

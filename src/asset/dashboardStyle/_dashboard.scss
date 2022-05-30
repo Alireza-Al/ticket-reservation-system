@@ -33,6 +33,8 @@
     width: 100%;
     height: 70px;
     border-bottom: 1px solid white;
+    transition: background .5s ease;
+    cursor: pointer;
     span {
         font-weight: 500;
     }
