@@ -17,6 +17,7 @@ function NavBar(props) {
 	}, []);
 
 	useEffect(() => {
+		console.log(props.user[0])
 	}, [props.user]);
 
 	return (
@@ -52,12 +53,12 @@ function NavBar(props) {
 					</span>
 				</li>
 				<li className="login-register">
-					{props.user[0] != undefined && props.user[0].id !=undefined? (
+					{props.user.length !== 0 ? (
 						<>
 							<span className="user-icon">
 								<FontAwesomeIcon icon={faUser} />
 							</span>
-							<a href="/dashboard">خوش آمدید</a>
+							<a href="/dashboard">{`${props.user[0].email} خوش آمدید`}</a>
 						</>
 					) : (
 						<>
