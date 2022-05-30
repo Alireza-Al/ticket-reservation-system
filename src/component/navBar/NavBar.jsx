@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Icon from "../../tracketIcon/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,8 +7,18 @@ import {
 	faTrain,
 	faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
+import getUserInfo from "../../data/actions/user/getUserInfo";
 
-function NavBar() {
+function NavBar(props) {
+
+	useEffect(() => {
+		props.getUserInfo();
+	}, []);
+
+	useEffect(() => {
+	}, [props.user]);
+
 	return (
 		<nav className="navbar">
 			<ul className="nav-menu">
@@ -42,16 +52,31 @@ function NavBar() {
 					</span>
 				</li>
 				<li className="login-register">
-					<span className="user-icon">
-						<FontAwesomeIcon icon={faUser} />
-					</span>
-					<a href="/users/login" className="">
-						ورود/ثبت نام
-					</a>
+					{props.user[0] != undefined && props.user[0].id !=undefined? (
+						<>
+							<span className="user-icon">
+								<FontAwesomeIcon icon={faUser} />
+							</span>
+							<a href="/dashboard">خوش آمدید</a>
+						</>
+					) : (
+						<>
+							<span className="user-icon">
+								<FontAwesomeIcon icon={faUser} />
+							</span>
+							<a href="/users/login" className="">
+								ورود/ثبت نام
+							</a>
+						</>
+					)}
 				</li>
 			</ul>
 		</nav>
 	);
 }
 
-export default NavBar;
+const mapStateToProps = (state) => ({
+	user: state.user,
+});
+
+export default connect(mapStateToProps, { getUserInfo })(NavBar);
