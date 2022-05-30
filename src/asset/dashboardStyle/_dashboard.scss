@@ -1,0 +1,49 @@
+.dashboard-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 89px 0px;
+    background-color: #E0E0E0;
+}
+
+.dashboard-self {
+    width: 1229px;
+    height: 600px;
+    background-color: white;
+    border-radius: 37px;
+    direction: rtl;
+    display: flex;
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #F59948;
+    height: 100%;
+    width: 200px;
+    border-radius: 0px 36px 36px 0px;
+}
+
+.dashboard-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid white;
+    span {
+        font-weight: 500;
+    }
+}
+
+.item-data {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: end;
+}
+
+@import './dashboardItems'
