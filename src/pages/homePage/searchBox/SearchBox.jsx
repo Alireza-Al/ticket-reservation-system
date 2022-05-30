@@ -80,7 +80,13 @@ function SearchBox() {
                             </button>
                         </div>
                     </div>
-                    <div className="divider"></div> {/*divides the selection part with the search part*/}
+                    <div className="divider" style={{
+                        backgroundColor:
+                            state.plane ? "#ff4e00"
+                                : state.train ? "#ff7600"
+                                    : state.bus ? "#ff9700"
+                                        : "initial"
+                    }}></div> {/*divides the selection part with the search part*/}
                     {/*each search box will be triggered when the related button is clicked*/}
                     {
                         state.plane ?
