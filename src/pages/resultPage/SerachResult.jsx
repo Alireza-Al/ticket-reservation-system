@@ -1,13 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDown, faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import PlaneSearch from "../../component/searchBox/plane/PlaneSearch";
-import NavBar from "./../../component/navBar/NavBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ShowTickets from "../../component/ticket/ShowTickets";
+import { connect } from "react-redux";
+import searchResult from "../../data/actions/ticket/searchResult";
 
-function SearchResult() {
+function SearchResult(props) {
 	// Create this state to use for closable section
 	const [closed, setClosed] = useState(false);
+
+	//Create this state to control results
+	const [results, setResults] = useState(null);
+
+	useEffect(() => {
+		if (props.ticket.length !== 0) {
+			setResults(props.ticket[0].allResults);
+		}
+	}, [props.ticket]);
 
 	// Create this function to close or open div
 	const closedDiv = () => {
@@ -34,11 +44,22 @@ function SearchResult() {
 				</div>
 			</div>
 			<div className="results">
-				<ShowTickets />
-				<ShowTickets />
+				{results === null ? (
+					<h1>Loading...</h1>
+				) : (
+					results.map((ticket, index) => {
+						return <ShowTickets ticket={ticket} key={index} />;
+					})
+				)}
 			</div>
 		</div>
 	);
 }
 
-export default SearchResult;
+const mapStateToProps = (state) => {
+	return {
+		ticket: state.ticket,
+	};
+};
+
+export default connect(mapStateToProps, { searchResult })(SearchResult);
