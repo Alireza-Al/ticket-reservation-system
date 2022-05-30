@@ -10,9 +10,6 @@ const getUserInfo = () => (dispatch) => {
 	};
 
 	axios.get("/customer/", config).then((response) => {
-
-		console.log(response);
-
 		const id = response.data[0].id;
 		const firstName = response.data[0].first_name;
 		const lastName = response.data[0].last_name;
