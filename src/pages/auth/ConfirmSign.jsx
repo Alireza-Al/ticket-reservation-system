@@ -1,5 +1,8 @@
 import { useState } from "react";
-function ConfirmSign() {
+import axios from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+
+function ConfirmSign(props) {
 	//Create array for  titles
 	const titles = [
 		"به تراکت خوش آمدید",
@@ -12,8 +15,33 @@ function ConfirmSign() {
 		confirmCode: "",
 	});
 
+	//Create this parameter to redirect pages
+	const history = useNavigate();
+
 	//Create this function to confirm sign in or sign up and send API requests
-	const confirmation = () => {};
+	const confirmation = (e) => {
+		e.preventDefault();
+		const data = {
+			email: props.email,
+			token: confirmCode.confirmCode,
+		};
+
+		axios
+			.post("/auth/token/", data)
+			.then((response) => {
+				console.log(response.data);
+				localStorage.setItem(
+					"token",
+					JSON.stringify(response.data.token)
+				);
+				setTimeout(() => {
+					history("/");
+				}, 1000);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
 	//Create confirmation page
 	return (
@@ -27,10 +55,13 @@ function ConfirmSign() {
 					type="number"
 					placeholder="کد تایید"
 					onChange={(e) =>
-						setConfirmCode({ ...confirmCode, confirmCode: e.target.value })
+						setConfirmCode({
+							...confirmCode,
+							confirmCode: e.target.value,
+						})
 					}
 				/>
-				<button type="button">{titles[2]}</button>
+				<button type="submit">{titles[2]}</button>
 			</form>
 		</div>
 	);
