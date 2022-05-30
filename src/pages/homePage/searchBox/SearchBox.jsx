@@ -25,9 +25,6 @@ function SearchBox() {
                 <div className="search-box-self">
                     <div className="item-selection-container">
                         <div className="plane-selector-container">  {/* plane toggle btn*/}
-                            <span className="plane-icon">
-                                <FontAwesomeIcon icon={faPlane} />
-                            </span>
                             <button className="plane-search-box-toggle" onClick={() => {
                                 if (state.plane) {
                                     return
@@ -39,13 +36,13 @@ function SearchBox() {
                                     })
                                 }
                             }}>
+                                <span id='plane' className="plane-icon">
+                                    <FontAwesomeIcon icon={faPlane} />
+                                </span>
                                 بلیط هواپیما
                             </button>
                         </div>
                         <div className="train-selector-container">  {/* train toggle btn*/}
-                            <span className="train-icon">
-                                <FontAwesomeIcon icon={faTrain} />
-                            </span>
                             <button className="train-search-box-toggle" onClick={() => {
                                 if (state.train) {
                                     return
@@ -57,13 +54,13 @@ function SearchBox() {
                                     })
                                 }
                             }}>
+                                <span id='train' className="train-icon">
+                                    <FontAwesomeIcon icon={faTrain} />
+                                </span>
                                 بلیط قطار
                             </button>
                         </div>
                         <div className="bus-selector-container">  {/* bus toggle btn*/}
-                            <span className="bus-icon">
-                                <FontAwesomeIcon icon={faBus} />
-                            </span>
                             <button className="bus-search-box-toggle" onClick={() => {
                                 if (state.bus) {
                                     return
@@ -76,6 +73,9 @@ function SearchBox() {
                                 }
 
                             }}>
+                                <span id='bus' className="bus-icon">
+                                    <FontAwesomeIcon icon={faBus} />
+                                </span>
                                 بلیط اتوبوس
                             </button>
                         </div>
