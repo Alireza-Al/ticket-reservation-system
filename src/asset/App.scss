@@ -82,6 +82,7 @@ input {
 	justify-content: center;
 }
 
+@import './dashboardStyle/dashboard';
 @import "./homePageStyle/home-page";
 @import "./login-registerPageStyle/sign";
 @import "./resultPageStyle/ticketInRes";
