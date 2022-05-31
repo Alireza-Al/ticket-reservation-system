@@ -23,6 +23,7 @@ function EditUserData(props) {
             },config)
             .then(res => {
                 console.log(res);
+                window.reload()
             })
             .catch(err => console.error(err))
     }
