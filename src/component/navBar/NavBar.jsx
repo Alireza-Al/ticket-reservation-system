@@ -54,7 +54,7 @@ function NavBar(props) {
 							<span className="user-icon">
 								<FontAwesomeIcon icon={faUser} />
 							</span>
-							<a href="/dashboard">{`${props.user[0].email} خوش آمدید`}</a>
+							<a href="/dashboard">{`${props.user[0].firstName} عزیز خوش آمدید`}</a>
 						</>
 					) : (
 						<>
