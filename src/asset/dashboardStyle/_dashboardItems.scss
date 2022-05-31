@@ -44,3 +44,28 @@ button {
         font-size: 15px;
     }
 }
+
+.logout-btn {
+    
+}
+
+.edit-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        input {
+            border: 1px solid $home-login-background;
+            margin: {
+                right: 20px;
+                bottom: 1rem
+            };
+        }
+        button {
+            margin-top: 1rem;
+        }
+    }
+}
