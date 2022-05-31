@@ -38,12 +38,12 @@ function PurchaseHistory() {
 									src="https://airhex.com/images/airline-logos/ata-airlines.png"
 									alt=""
 								/>
-								<h3>{/*props.ticket.company*/}</h3>
+								<h3>{state.ticket.company}</h3>
 							</div>
 							{/* this div have editional information of the ticket(data, code, ...) */}
 							<div className="details">
 								<div className="row">
-									<p>{state.ticket.company}</p>
+									<p>{state.ticket.departure}</p>
 									<FontAwesomeIcon icon={faArrowLeftLong} />
 									<p>{state.ticket.destination}</p>
 								</div>
