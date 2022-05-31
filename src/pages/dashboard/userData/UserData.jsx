@@ -75,10 +75,8 @@ function UserData(props) {
 						className="logout-btn"
 						onClick={() => {
 							localStorage.removeItem("token");
-                            window.reload();
+                            window.location.reload();
                             history("/");
-                            
-
 						}}
 					>
 						خروج
