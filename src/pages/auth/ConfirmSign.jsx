@@ -34,9 +34,9 @@ function ConfirmSign(props) {
 					"token",
 					JSON.stringify(response.data.token)
 				);
-				setTimeout(() => {
-					history("/");
-				}, 1000);
+
+				history("/");
+				window.location.reload();
 			})
 			.catch((error) => {
 				console.log(error);
