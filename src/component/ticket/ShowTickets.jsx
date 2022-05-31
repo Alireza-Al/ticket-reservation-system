@@ -1,8 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import axios from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+
 
 function ShowTickets(props) {
+	//Create this parameter to redirect pages
+	const history = useNavigate();
+
 	const buyTicket = () => {
 		const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
 
@@ -14,7 +19,7 @@ function ShowTickets(props) {
 		axios
 			.post(`/ticket/${props.ticket.id}/reserve/`, { count: 1 }, config)
 			.then((response) => {
-				console.log(response);
+				history(`/reserve?reserveCode=${response.data.receipts[0].tracking_code}`);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -49,7 +54,7 @@ function ShowTickets(props) {
 			</div>
 			<div className="price">
 				<h3>{props.ticket.price}ریال</h3>
-				<button onClick={() => buyTicket()}>انتخاب بلیط</button>
+				<button onClick={() => buyTicket()}>رزرو بلیط</button>
 			</div>
 		</div>
 	);
