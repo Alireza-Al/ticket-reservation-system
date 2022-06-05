@@ -1,16 +1,5 @@
-.container-user {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
 .item-cont {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
+	margin-bottom: 50px;
 }
 
 .cont-name {
@@ -56,17 +45,17 @@ button {
 	}
 }
 
+.logout-btn {
+}
+
 .edit-cont {
 	display: flex;
-	width: 100%;
 	flex-direction: column;
 	justify-content: center;
 	form {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: space-between;
-		width: 100%;
 		input {
 			border: 1px solid $home-login-background;
 			margin: {
