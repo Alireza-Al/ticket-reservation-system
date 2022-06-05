@@ -1,8 +1,8 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import EditUserData from './EditUserData'
-import { connect } from 'react-redux'
-import getUserInfo from '../../../data/actions/user/getUserInfo';
-import { useNavigate } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from "react";
+import EditUserData from "./EditUserData";
+import { connect } from "react-redux";
+import getUserInfo from "../../../data/actions/user/getUserInfo";
+import { useNavigate } from "react-router-dom";
 
 function UserData(props) {
 	//Create this parameter to redirect pages
@@ -38,7 +38,7 @@ function UserData(props) {
 					id={userInfo.id}
 				/>
 			) : (
-				<div>
+				<div className="container-user">
 					{" "}
 					{/* cont means container */}
 					<div className="item-cont">
@@ -63,24 +63,26 @@ function UserData(props) {
 						<span className="cont-name">{containerNames[4]}</span>
 						<span className="cont-value">{userInfo.birthDate}</span>
 					</div>
-					<button
-						className="change-info"
-						onClick={() => {
-							setEditUserData(true);
-						}}
-					>
-						تغییر اطلاعات کاربری
-					</button>
-					<button
-						className="logout-btn"
-						onClick={() => {
-							localStorage.removeItem("token");
-                            history("/");
-                            window.location.reload();
-						}}
-					>
-						خروج
-					</button>
+					<div className="item-cont">
+						<button
+							className="change-info"
+							onClick={() => {
+								setEditUserData(true);
+							}}
+						>
+							تغییر اطلاعات کاربری
+						</button>
+						<button
+							className="logout-btn"
+							onClick={() => {
+								localStorage.removeItem("token");
+								history("/");
+								window.location.reload();
+							}}
+						>
+							خروج
+						</button>
+					</div>
 				</div>
 			)}
 		</div>
@@ -88,7 +90,7 @@ function UserData(props) {
 }
 
 const mapStateToProps = (state) => ({
-    user: state.user
-})
+	user: state.user,
+});
 
-export default connect(mapStateToProps, { getUserInfo })(UserData)
+export default connect(mapStateToProps, { getUserInfo })(UserData);

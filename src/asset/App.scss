@@ -9,8 +9,24 @@ body {
 	font-family: $global-font-family;
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #c9c8c8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $button-color;
+	border-radius: 10px;
+}
+
 //Create this style for all button
-button{
+button {
 	cursor: pointer;
 	background-color: $home-login-background;
 	color: $global-text-color;
@@ -66,7 +82,7 @@ input {
 	font-weight: 200;
 	font-size: 15px;
 	line-height: 23px;
-	&::placeholder{
+	&::placeholder {
 		text-align: right;
 	}
 }
@@ -76,11 +92,12 @@ input {
 	width: 100%;
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
-@import './dashboardStyle/dashboard';
+@import "./dashboardStyle/dashboard";
 @import "./homePageStyle/home-page";
 @import "./login-registerPageStyle/sign";
 @import "./resultPageStyle/ticketInRes";
