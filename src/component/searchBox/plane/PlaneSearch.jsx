@@ -50,8 +50,10 @@ function PlaneSearch(props) {
 			</div>
 			<div className="round-trip-time">
 				<input
-					type="date"
-					placeholder="تاریخ رفت"
+					type="text"
+					placeholder="تاریخ حرکت"
+					onFocus={(e) => (e.target.type = "date")}
+					onBlur={(e) => (e.target.type = "text")}
 					value={states.depatureDate}
 					onChange={(e) => {
 						setStates({
@@ -61,8 +63,10 @@ function PlaneSearch(props) {
 					}}
 				/>
 				<input
-					type="date"
+					type="text"
 					placeholder="تاریخ برگشت"
+					onFocus={(e) => (e.target.type = "date")}
+					onBlur={(e) => (e.target.type = "text")}
 					value={states.returnDate}
 					onChange={(e) => {
 						setStates({
