@@ -18,7 +18,7 @@ function UserData(props) {
 		"تاریخ تولد :",
 	];
 
-	const [editUserData, setEditUserData] = useState(false);
+	const [editUserDataState, seteditUserDataState] = useState(false);
 
 	const [userInfo, setUserInfo] = useState({});
 
@@ -36,7 +36,7 @@ function UserData(props) {
 			{
 				props.user.length === 0 ? <Spinner animation="border" variant="warning" />
 					:
-					editUserData ?
+					editUserDataState ?
 						<EditUserData
 							containerNames={containerNames}
 							id={userInfo.id}
@@ -68,7 +68,7 @@ function UserData(props) {
 								<button
 									className="change-info"
 									onClick={() => {
-										setEditUserData(true);
+										seteditUserDataState(true);
 									}}
 								>
 									تغییر اطلاعات کاربری
