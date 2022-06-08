@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Icon from "../../tracketIcon/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
