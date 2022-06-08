@@ -1,4 +1,6 @@
 .item-cont {
+	display: flex;
+	justify-content: space-between;
 	margin-bottom: 50px;
 }
 
@@ -45,17 +47,15 @@ button {
 	}
 }
 
-.logout-btn {
-}
 
 .edit-cont {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	form {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		align-items: flex-end;
+		label {
+			font-weight: 600;
+		}
 		input {
 			border: 1px solid $home-login-background;
 			margin: {
@@ -64,7 +64,7 @@ button {
 			}
 		}
 		button {
-			margin-top: 1rem;
+			margin-right: 10px;
 		}
 	}
 }
