@@ -24,10 +24,7 @@ function EditUserData(props) {
 				},
 				config
 			)
-			.then((res) => {
-				console.log(res);
-				window.location.reload();
-			})
+			.then(window.location.reload())
 			.catch((err) => console.error(err));
 	};
 
@@ -36,12 +33,11 @@ function EditUserData(props) {
 			<form action="submit" onSubmit={(e) => HandleSubmit(e)}>
 				<div className="item-cont">
 					<label htmlFor="">
-						{props.containerNames[0]}{" "}
+						{props.containerNames[0]}
 						{/* container names like name */}
 					</label>
 					<input
 						type="text"
-						// value={props.initValue.name}
 						onChange={(e) => {
 							setInfo({
 								...info,
@@ -54,7 +50,6 @@ function EditUserData(props) {
 					<label htmlFor="">{props.containerNames[1]}</label>
 					<input
 						type="text"
-						// value={props.initValue.lastName}
 						onChange={(e) => {
 							setInfo({
 								...info,
@@ -67,7 +62,6 @@ function EditUserData(props) {
 					<label htmlFor="">{props.containerNames[2]}</label>
 					<input
 						type="number"
-						// value={props.initValue.idNum}
 						onChange={(e) => {
 							setInfo({
 								...info,
@@ -80,7 +74,6 @@ function EditUserData(props) {
 					<label htmlFor="">{props.containerNames[4]}</label>
 					<input
 						type="date"
-						// value={props.initValue.idNum}
 						onChange={(e) => {
 							setInfo({
 								...info,
@@ -89,8 +82,10 @@ function EditUserData(props) {
 						}}
 					/>
 				</div>
-
-				<button>ذخیره</button>
+				<div className="item-cont">
+					<button>بازگشت</button>
+					<button>ذخیره</button>
+				</div>
 			</form>
 		</div>
 	);

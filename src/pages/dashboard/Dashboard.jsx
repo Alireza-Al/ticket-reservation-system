@@ -8,6 +8,7 @@ function Dashboard() {
 
     const [active, setActive] = useState({})
 
+    // this function will change each dashboard menu items state when they are clicked and show their content
     const changeActivation = (state) => {
         setActive({
             userData: state.userData,
@@ -19,8 +20,8 @@ function Dashboard() {
     return (
         <div className='dashboard-container'> {/* the container of the dashboard page */}
             <div className="dashboard-self"> {/* the container of the dashboard box*/}
-                <DashboardMenu active={changeActivation} />
-                <div className="item-data">
+                <DashboardMenu active={changeActivation} /> {/* dashboard menu on the right */}
+                <div className="item-data"> {/* dashboard content container */}
                     {
                         active.userData ?
                             <UserData />

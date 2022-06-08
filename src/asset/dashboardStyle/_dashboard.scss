@@ -9,12 +9,12 @@
 }
 
 .dashboard-self {
+	display: flex;
 	width: 1229px;
 	height: 600px;
 	background-color: white;
 	border-radius: 37px;
 	direction: rtl;
-	display: flex;
 }
 
 .dashboard-menu {
@@ -44,8 +44,8 @@
 	display: flex;
 	flex: 1;
 	align-items: center;
-	justify-content: center;
-	text-align: end;
+	justify-content: space-around;
+	text-align: start;
 	overflow-y: auto;
 
 	.ticket-result {

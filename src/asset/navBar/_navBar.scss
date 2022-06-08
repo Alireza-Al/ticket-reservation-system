@@ -5,18 +5,21 @@
     flex: 1;
     height: 75px;
     padding: 11px 10px;
-    .nav-menu { // wrapper of all menu-items inside nav
+    .nav-menu {
+        // wrapper of all menu-items inside nav
         width: 100%;
         display: flex;
         justify-content: space-between;
-        li { // all li should have these styles
+        li {
+            // all li should have these styles
             display: inline;
             list-style-type: none;
             padding: {
-                top: 5px
-            };
+                top: 5px;
+            }
             cursor: pointer;
-            a { // all a in li should have these styles 
+            a {
+                // all a in li should have these styles
                 color: black;
                 text-decoration: none;
                 font-size: 20px;
@@ -29,24 +32,34 @@
                 margin: {
                     right: 5px;
                     left: 10px;
-                };
+                }
                 padding-top: 5px;
             }
         }
-        .nav-item { // all nav-items except the tracket icon
+        .nav-item {
+            // all nav-items except the tracket icon
             margin: {
                 top: 11px;
                 right: 40px;
-            };
+            }
         }
         .plane-text {
             margin-right: 41px;
+            &:hover {
+                color: $plane-icon-color;
+            }
         }
         .plane-icon {
             color: $plane-icon-color;
         }
+        .train-text:hover {
+            color: $train-icon-color;
+        }
         .train-icon {
-            color: 	$train-icon-color;
+            color: $train-icon-color;
+        }
+        .bus-text:hover {
+            color: $bus-icon-color;
         }
         .bus-icon {
             color: $bus-icon-color;
@@ -58,12 +71,15 @@
             }
             a {
                 border: none;
+                &:hover {
+                    color: $home-login-background;
+                }
             }
         }
     }
 }
 
 .tracketIcon {
-        width: 150.5px;
-        height: 50.5px;
+    width: 150.5px;
+    height: 50.5px;
 }

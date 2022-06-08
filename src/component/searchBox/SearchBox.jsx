@@ -14,6 +14,8 @@ function SearchBox() {
         bus: false
     })
 
+    const [shakeState, setShakeState] = useState({})
+
     return (
         <div className="search-box-container">
             <div className="search-box-back" style={{
@@ -25,19 +27,29 @@ function SearchBox() {
                 <div className="search-box-self">
                     <div className="item-selection-container">
                         <div className="plane-selector-container">  {/* plane toggle btn*/}
-                            <button className="plane-search-box-toggle" onClick={() => {
-                                if (state.plane) {
-                                    return
-                                } else {
-                                    setState({
-                                        plane: true,
-                                        train: false,
-                                        bus: false
+                            <button className="plane-search-box-toggle"
+                                onClick={() => {
+                                    if (state.plane) {
+                                        return
+                                    } else {
+                                        setState({
+                                            plane: true,
+                                            train: false,
+                                            bus: false
+                                        })
+                                    }
+                                }}
+                                onMouseMove={() => {
+                                    setShakeState({
+                                        plane: true
                                     })
-                                }
-                            }}>
+                                }}
+                                onMouseLeave={() => {
+                                    setShakeState({ plane: false })
+                                }}
+                            >
                                 <span id='plane' className="plane-icon">
-                                    <FontAwesomeIcon icon={faPlane} />
+                                    <FontAwesomeIcon icon={faPlane} shake={shakeState.plane} />
                                 </span>
                                 بلیط هواپیما
                             </button>
@@ -53,28 +65,51 @@ function SearchBox() {
                                         bus: false
                                     })
                                 }
-                            }}>
+                            }}
+                                onMouseMove={() => {
+                                    setShakeState({
+                                        train: true
+                                    })
+                                }}
+                                onMouseLeave={() => {
+                                    setShakeState({
+                                        train: false
+                                    })
+                                }}
+
+                            >
                                 <span id='train' className="train-icon">
-                                    <FontAwesomeIcon icon={faTrain} />
+                                    <FontAwesomeIcon icon={faTrain} shake={shakeState.train} />
                                 </span>
                                 بلیط قطار
                             </button>
                         </div>
                         <div className="bus-selector-container">  {/* bus toggle btn*/}
-                            <button className="bus-search-box-toggle" onClick={() => {
-                                if (state.bus) {
-                                    return
-                                } else {
-                                    setState({
-                                        plane: false,
-                                        train: false,
+                            <button className="bus-search-box-toggle"
+                                onClick={() => {
+                                    if (state.bus) {
+                                        return
+                                    } else {
+                                        setState({
+                                            plane: false,
+                                            train: false,
+                                            bus: true
+                                        })
+                                    }
+                                }}
+                                onMouseMove={() => {
+                                    setShakeState({
                                         bus: true
                                     })
-                                }
-
-                            }}>
+                                }}
+                                onMouseLeave={() => {
+                                    setShakeState({
+                                        bus: false
+                                    })
+                                }}
+                            >
                                 <span id='bus' className="bus-icon">
-                                    <FontAwesomeIcon icon={faBus} />
+                                    <FontAwesomeIcon icon={faBus} shake={shakeState.bus} />
                                 </span>
                                 بلیط اتوبوس
                             </button>

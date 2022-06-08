@@ -1,10 +1,12 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import EditUserData from "./EditUserData";
 import { connect } from "react-redux";
 import getUserInfo from "../../../data/actions/user/getUserInfo";
 import { useNavigate } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 function UserData(props) {
+
 	//Create this parameter to redirect pages
 	const history = useNavigate();
 
@@ -16,13 +18,12 @@ function UserData(props) {
 		"تاریخ تولد :",
 	];
 
-	const [editUserData, setEditUserData] = useState(false);
+	const [editUserDataState, seteditUserDataState] = useState(false);
 
 	const [userInfo, setUserInfo] = useState({});
 
 	useEffect(() => {
 		props.getUserInfo();
-		console.log(props.user);
 	}, []);
 
 	useEffect(() => {
@@ -32,59 +33,59 @@ function UserData(props) {
 
 	return (
 		<div>
-			{editUserData ? (
-				<EditUserData
-					containerNames={containerNames}
-					id={userInfo.id}
-				/>
-			) : (
-				<div className="container-user">
-					{" "}
-					{/* cont means container */}
-					<div className="item-cont">
-						<span className="cont-name">{containerNames[0]}</span>
-						<span className="cont-value">{userInfo.firstName}</span>
-					</div>
-					<div className="item-cont">
-						<span className="cont-name">{containerNames[1]}</span>
-						<span className="cont-value">{userInfo.lastName}</span>
-					</div>
-					<div className="item-cont">
-						<span className="cont-name">{containerNames[2]}</span>
-						<span className="cont-value">
-							{userInfo.nationalCode}
-						</span>
-					</div>
-					<div className="item-cont">
-						<span className="cont-name">{containerNames[3]}</span>
-						<span className="cont-value">{userInfo.email}</span>
-					</div>
-					<div className="item-cont">
-						<span className="cont-name">{containerNames[4]}</span>
-						<span className="cont-value">{userInfo.birthDate}</span>
-					</div>
-					<div className="item-cont">
-						<button
-							className="change-info"
-							onClick={() => {
-								setEditUserData(true);
-							}}
-						>
-							تغییر اطلاعات کاربری
-						</button>
-						<button
-							className="logout-btn"
-							onClick={() => {
-								localStorage.removeItem("token");
-								history("/");
-								window.location.reload();
-							}}
-						>
-							خروج
-						</button>
-					</div>
-				</div>
-			)}
+			{
+				props.user.length === 0 ? <Spinner animation="border" variant="warning" />
+					:
+					editUserDataState ?
+						<EditUserData
+							containerNames={containerNames}
+							id={userInfo.id}
+						/>
+						:
+						<div className="container-user">
+							{/* cont means container */}
+							<div className="item-cont">
+								<span className="cont-name">{containerNames[0]}</span>
+								<span className="cont-value">{userInfo.firstName}</span>
+							</div>
+							<div className="item-cont">
+								<span className="cont-name">{containerNames[1]}</span>
+								<span className="cont-value">{userInfo.lastName}</span>
+							</div>
+							<div className="item-cont">
+								<span className="cont-name">{containerNames[2]}</span>
+								<span className="cont-value">{userInfo.nationalCode}</span>
+							</div>
+							<div className="item-cont">
+								<span className="cont-name">{containerNames[3]}</span>
+								<span className="cont-value">{userInfo.email}</span>
+							</div>
+							<div className="item-cont">
+								<span className="cont-name">{containerNames[4]}</span>
+								<span className="cont-value">{userInfo.birthDate}</span>
+							</div>
+							<div className="item-cont">
+								<button
+									className="change-info"
+									onClick={() => {
+										seteditUserDataState(true);
+									}}
+								>
+									تغییر اطلاعات کاربری
+								</button>
+								<button
+									className="logout-btn"
+									onClick={() => {
+										localStorage.removeItem("token");
+										history("/");
+										window.location.reload();
+									}}
+								>
+									خروج
+								</button>
+							</div>
+						</div>
+			}
 		</div>
 	);
 }
