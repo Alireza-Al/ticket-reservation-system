@@ -31,7 +31,6 @@ function DashboardMenu(props) {
                 className="dashboard-item"
                 onClick={() => {
                     setState({
-                        dahsboard: false,
                         userData: false,
                         wallet: true,
                         history: false
