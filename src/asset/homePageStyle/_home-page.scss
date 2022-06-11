@@ -1,5 +1,5 @@
 .home {
-    transform: all .5s ease;
+    transform: all 0.5s ease;
 }
 
 .search-box-container {
@@ -16,7 +16,7 @@
     width: 100%;
     height: 400px;
     border-radius: 162px 0;
-    transition: background .5s ease;
+    transition: background 0.5s ease;
 }
 
 // search-box self (the yellow one)
@@ -62,7 +62,8 @@
     .bus-icon {
         color: $bus-icon-color;
     }
-    button { // all the search box toggle buttons 
+    button {
+        // all the search box toggle buttons
         font-family: $global-font-family;
         background-color: transparent;
         border: none;
@@ -83,13 +84,15 @@
     justify-content: start;
     padding: {
         top: 55px;
-        right:70px;
+        right: 70px;
         left: 70px;
-    };
-    div { // all divs in all three search boxes
+    }
+    div {
+        // all divs in all three search boxes
         margin-left: 25px;
     }
-    input { // all inputs in all three search boxes
+    input {
+        // all inputs in all three search boxes
         width: 150px;
         border: 1px solid $home-login-background;
         font-family: $global-font-family;
@@ -97,7 +100,8 @@
             text-align: center;
         }
     }
-    button { // search btn
+    button {
+        // search btn
         background-color: $home-login-background;
         border: none;
         font-family: $global-font-family;
@@ -105,11 +109,10 @@
         height: 47px;
         border-radius: 13px;
         cursor: pointer;
-        transition: background .3s ease;
+        transition: background 0.3s ease;
         &:hover {
             background-color: $button-color;
         }
-
     }
 }
 
@@ -117,11 +120,11 @@
     width: 100%;
     height: 5px;
     background-color: $home-login-background;
-    transition: background .3s ease;
+    transition: background 0.3s ease;
 }
 
 .slider-container {
-    height: 900px;
+    height: 700px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -129,8 +132,40 @@
     .slider {
         width: 1100px;
         height: 600px;
-        background-color: #d0d0d0;
+        background-color: white;
         border-radius: 40px;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -150,7 +185,7 @@
         padding: {
             top: 40px;
             right: 50px;
-        };
+        }
         width: 60%;
         background-color: $home-login-background;
         border-radius: 168px 0px 0px 0px;
@@ -177,10 +212,11 @@
                 width: 350px;
                 height: 150px;
             }
-        }   
-        .part-under-icon { // the red like part under the tracket icon
+        }
+        .part-under-icon {
+            // the red like part under the tracket icon
             background-color: $home-login-background;
             height: 125px;
-        } 
+        }
     }
 }
