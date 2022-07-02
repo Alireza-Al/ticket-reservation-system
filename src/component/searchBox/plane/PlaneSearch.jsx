@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "../../../api/axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import searchResult from "../../../data/actions/ticket/searchResult";
+import CounterInput from "../CounterInput";
 
 function PlaneSearch(props) {
+	//Create this state to control inputs and request to API
 	const [states, setStates] = useState({
 		departure: "",
 		destination: "",
@@ -12,7 +13,10 @@ function PlaneSearch(props) {
 		type: 2,
 	});
 
-    const history = useNavigate();
+	//Create this state to control number of passengers
+	const [numOfPassengers, setNumOfPassengers] = useState(1);
+
+	const history = useNavigate();
 
 	const searchTicket = (e) => {
 		e.preventDefault();
@@ -20,6 +24,11 @@ function PlaneSearch(props) {
 		history(
 			`/result?dep=${states.departure}&des=${states.destination}&start_time=${states.start_time}&et=${states.end_time}&type=${states.type}`
 		);
+	};
+
+	//Create this function to control counter input
+	const inputFunction = (count) => {
+		setNumOfPassengers(count);
 	};
 
 	return (
@@ -50,8 +59,10 @@ function PlaneSearch(props) {
 			</div>
 			<div className="round-trip-time">
 				<input
-					type="date"
+					type="text"
 					placeholder="تاریخ رفت"
+					onFocus={(e) => (e.target.type = "date")}
+					onBlur={(e) => (e.target.type = "text")}
 					value={states.depatureDate}
 					onChange={(e) => {
 						setStates({
@@ -61,8 +72,10 @@ function PlaneSearch(props) {
 					}}
 				/>
 				<input
-					type="date"
+					type="text"
 					placeholder="تاریخ برگشت"
+					onFocus={(e) => (e.target.type = "date")}
+					onBlur={(e) => (e.target.type = "text")}
 					value={states.returnDate}
 					onChange={(e) => {
 						setStates({
@@ -74,17 +87,7 @@ function PlaneSearch(props) {
 				/>
 			</div>
 			<div className="num-of-passengers">
-				<input
-					type="number"
-					placeholder="مسافران"
-					value={states.numOfPassengers}
-					onChange={(e) => {
-						setStates({
-							...states,
-							numOfPassengers: e.target.value,
-						});
-					}}
-				/>
+				<CounterInput inputF={inputFunction} />
 			</div>
 			<div className="search-button">
 				<button onClick={(e) => searchTicket(e)}>جستجو</button>
@@ -94,9 +97,9 @@ function PlaneSearch(props) {
 }
 
 const mapStateToProps = (state) => {
-return {
-	ticket: state.ticket
-}
-}
+	return {
+		ticket: state.ticket,
+	};
+};
 
-export default connect(mapStateToProps, {searchResult})(PlaneSearch);
+export default connect(mapStateToProps, { searchResult })(PlaneSearch);
