@@ -87,6 +87,10 @@ input {
 	}
 }
 
+input[type="number"] {
+	text-align: left;
+}
+
 //Create this class for all pages that component on center
 .container {
 	width: 100%;
@@ -95,6 +99,34 @@ input {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+//Create this class for counter input
+.counter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	direction: ltr;
+
+	.counter-input {
+		width: 40px;
+		border: none;
+		text-align: center;
+		pointer-events: none;
+	}
+
+	.counter-btn {
+		cursor: pointer;
+		border-radius: 0px;
+		width: 30px !important;
+		background-color: transparent;
+		color: #000;
+		font-size: 20px;
+
+		&:hover {
+			background-color: transparent;
+		}
+	}
 }
 
 @import "./dashboardStyle/dashboard";

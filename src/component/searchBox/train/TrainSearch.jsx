@@ -1,17 +1,24 @@
-import { useState } from 'react'
+import { useState } from "react";
+import CounterInput from "../CounterInput";
 
 function TrainSearch() {
+	const [states, setStates] = useState({
+		source: "",
+		destination: "",
+		depatureDate: "",
+		returnDate: "",
+		numOfPassengers: 0,
+	});
 
-    const [states, setStates] = useState({
-        source: '',
-        destination: '',
-        depatureDate: '',
-        returnDate: '',
-        numOfPassengers: 0
-    })
+	//Create this state to control number of passengers
+	const [numOfPassengers, setNumOfPassengers] = useState(1);
 
+	//Create this function to control counter input
+	const inputFunction = (count) => {
+		setNumOfPassengers(count);
+	};
 
-    return (
+	return (
 		<div className="slot-container">
 			<div className="source-and-destination">
 				<input
@@ -67,17 +74,7 @@ function TrainSearch() {
 				/>
 			</div>
 			<div className="num-of-passengers">
-				<input
-					type="number"
-					placeholder="مسافران"
-					value={states.numOfPassengers}
-					onChange={(e) => {
-						setStates({
-							...states,
-							numOfPassengers: e.target.value,
-						});
-					}}
-				/>
+				<CounterInput inputF={inputFunction} />
 			</div>
 			<div className="search-button">
 				<button>جستجو</button>
@@ -86,4 +83,4 @@ function TrainSearch() {
 	);
 }
 
-export default TrainSearch
+export default TrainSearch;
