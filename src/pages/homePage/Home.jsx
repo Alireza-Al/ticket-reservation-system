@@ -4,12 +4,58 @@ import SearchBox from "../../component/searchBox/SearchBox";
 import Slider from "./slider/Slider";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faInstagram, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
-import { faEarthAsia } from '@fortawesome/free-solid-svg-icons';
+import { faCircleDollarToSlot, faComment, faEarthAsia, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
 	return (
 		<div className="home">
 			<SearchBox />
+			<div className="services">
+				<div className="col">
+					<FontAwesomeIcon className='icon' icon={faEarthAsia} />
+					<div className="text-cont">
+						<p className="topic">
+							رزرو کاملا آنلاین
+						</p>
+						<p className="desc">
+							رزرو هتل و خربد بلیط سریع و راحت
+						</p>
+					</div>
+				</div>
+				<div className="col">
+					<FontAwesomeIcon className='icon' icon={faCircleDollarToSlot} />
+					<div className="text-cont">
+						<p className="topic">
+							تضمین بهترین قیمت
+						</p>
+						<p className="desc">
+							بیشترین تخفیف ها برای رزرو هتل و خرید بلیط
+						</p>
+					</div>
+				</div>
+				<div className="col">
+					<FontAwesomeIcon className='icon' icon={faComment} />
+					<div className="text-cont">
+						<p className="topic">
+							امکان بررسی نظرات کاربران
+						</p>
+						<p className="desc">
+							بررسی کیفیت هتل ها از نظر کاربران
+						</p>
+					</div>
+				</div>
+				<div className="col">
+					<FontAwesomeIcon className='icon' icon={faHeadphonesSimple} />
+					<div className="text-cont">
+						<p className="topic">
+							پشتیبانی 24 ساعته
+						</p>
+						<p className="desc">
+							7روز هفته و حتی روز های تعطیل
+						</p>
+					</div>
+				</div>
+			</div>
 			<div className="slider-container">
 				<Slider />
 			</div>
@@ -79,10 +125,10 @@ function Home() {
 				<div className="right-side">
 					<p>تماس با ما</p>
 					<div className="link-to-social-media">
-						<FontAwesomeIcon className='hhh' icon={faTwitter}/>
-						<FontAwesomeIcon icon={faInstagram}/>
-						<FontAwesomeIcon icon={faLinkedin}/>
-						<FontAwesomeIcon icon={faTelegram}/>
+						<FontAwesomeIcon className='hhh' icon={faTwitter} />
+						<FontAwesomeIcon icon={faInstagram} />
+						<FontAwesomeIcon icon={faLinkedin} />
+						<FontAwesomeIcon icon={faTelegram} />
 					</div>
 					<p className="address">
 						آدرس : دانشگاه تبریز، دانشکده مهندسی برق و کامپیوتر

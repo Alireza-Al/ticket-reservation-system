@@ -123,6 +123,32 @@
     transition: background 0.3s ease;
 }
 
+.services {
+    display: flex;
+    direction: rtl;
+    justify-content: space-evenly;
+    .col {
+        display: flex;
+        width: 15%;
+        .icon {
+            font-size: 2.5rem;
+            color: #a3a3a3;
+            margin-top: .9rem;
+        }
+        .text-cont {
+            line-height: 1rem;
+            margin-right: 8px;
+            .topic {
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+            .desc {
+                color: #a3a3a3;
+            }
+        }
+    }
+}
+
 .slider-container {
     height: 700px;
     width: 100%;
