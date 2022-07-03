@@ -84,8 +84,8 @@
     justify-content: start;
     padding: {
         top: 55px;
-        right: 70px;
-        left: 70px;
+        right: 60px;
+        left: 60px;
     }
     div {
         // all divs in all three search boxes
@@ -169,6 +169,18 @@
     }
 }
 
+.about-us {
+    direction: rtl;
+    padding: 2rem 5rem;
+    .paragragh {
+        p {
+            padding: 2rem;
+            line-height: 1.5rem;
+            font-size: 1rem;
+        }
+    }
+}
+
 .footer {
     display: flex;
     flex-direction: row;
@@ -189,11 +201,16 @@
         width: 60%;
         background-color: $home-login-background;
         border-radius: 168px 0px 0px 0px;
+        .link-to-social-media {
+            display: flex;
+            justify-content: space-between;
+            width: 15%;
+        }
         p {
             margin-top: 30px;
         }
         .address {
-            margin-top: 80px;
+            margin-top: 50px;
         }
     }
     .left-side {
