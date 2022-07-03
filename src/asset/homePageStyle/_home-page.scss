@@ -84,8 +84,8 @@
     justify-content: start;
     padding: {
         top: 55px;
-        right: 70px;
-        left: 70px;
+        right: 60px;
+        left: 60px;
     }
     div {
         // all divs in all three search boxes
@@ -121,6 +121,32 @@
     height: 5px;
     background-color: $home-login-background;
     transition: background 0.3s ease;
+}
+
+.services {
+    display: flex;
+    direction: rtl;
+    justify-content: space-evenly;
+    .col {
+        display: flex;
+        width: 15%;
+        .icon {
+            font-size: 2.5rem;
+            color: #a3a3a3;
+            margin-top: .9rem;
+        }
+        .text-cont {
+            line-height: 1rem;
+            margin-right: 8px;
+            .topic {
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+            .desc {
+                color: #a3a3a3;
+            }
+        }
+    }
 }
 
 .slider-container {
@@ -165,7 +191,19 @@
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        border-radius: 30px;
+    }
+}
+
+.about-us {
+    direction: rtl;
+    padding: 2rem 5rem;
+    .paragragh {
+        p {
+            padding: 2rem;
+            line-height: 1.5rem;
+            font-size: 1rem;
+        }
     }
 }
 
@@ -189,11 +227,16 @@
         width: 60%;
         background-color: $home-login-background;
         border-radius: 168px 0px 0px 0px;
+        .link-to-social-media {
+            display: flex;
+            justify-content: space-between;
+            width: 15%;
+        }
         p {
             margin-top: 30px;
         }
         .address {
-            margin-top: 80px;
+            margin-top: 50px;
         }
     }
     .left-side {
