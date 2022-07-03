@@ -15,24 +15,41 @@ function Slider() {
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 5000,
+                    delay: 6000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
                     clickable: true,
                 }}
+                loop={true}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide>1</SwiperSlide>
-                <SwiperSlide>2</SwiperSlide>
-                <SwiperSlide>3</SwiperSlide>
-                <SwiperSlide>4</SwiperSlide>
-                <SwiperSlide>5</SwiperSlide>
-                <SwiperSlide>6</SwiperSlide>
-                <SwiperSlide>7</SwiperSlide>
-                <SwiperSlide>8</SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/hotel/large/20220625/1-mobile-20220625.jpg" alt="" />
+                    </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/hotel/medium/20220625/1-desktop-20220625.jpg" alt="" />
+                    </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/hotel/medium/20220625/2-desktop-20220625.jpg" alt="" />
+                    </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/hotel/medium/20220625/4-desktop-20220625.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/hotel/medium/20220625/3-desktop-20220625.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/flight/medium/20220625/4-desktop-20220625.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/flight/medium/20220625/3-desktop-20220625.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src="https://cdnsnapptrip.com/images/market/Uploads/banners/website/flight/medium/20220625/1-desktop-20220625.jpg" alt="" />
+                </SwiperSlide>
             </Swiper>
         </div>
     )
