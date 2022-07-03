@@ -25,7 +25,6 @@ function ShowTickets(props) {
 				console.log(error);
 			});
 	};
-
 	// Create show tickets in result page component
 	return (
 		<div className="ticket-result">
@@ -45,6 +44,10 @@ function ShowTickets(props) {
 						<p>{props.ticket.departure}</p>
 						<FontAwesomeIcon icon={faArrowLeftLong} />
 						<p>{props.ticket.destination}</p>
+					</div>
+					<div className="row">
+						<h4>تاریخ رفت:</h4>
+						<h4>{props.ticket.start_time}</h4>
 					</div>
 					<div className="row">
 						<h4>شماره بلیط:{props.ticket.code}</h4>

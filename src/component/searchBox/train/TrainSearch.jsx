@@ -1,17 +1,39 @@
 import { useState } from "react";
+import { connect } from "react-redux";
+import searchResult from "../../../data/actions/ticket/searchResult";
 import CounterInput from "../CounterInput";
+import { useNavigate } from "react-router-dom";
 
-function TrainSearch() {
-	const [states, setStates] = useState({
-		source: "",
-		destination: "",
-		depatureDate: "",
-		returnDate: "",
-		numOfPassengers: 0,
-	});
+function TrainSearch(props) {
+	const [states, setStates] = useState(
+		props.params
+			? {
+					departure: props.params.departure,
+					destination: props.params.destination,
+					start_time: props.params.start_time,
+					type: props.params.type,
+			  }
+			: {
+					departure: "",
+					destination: "",
+					start_time: "",
+					type: 1,
+			  }
+	);
 
 	//Create this state to control number of passengers
 	const [numOfPassengers, setNumOfPassengers] = useState(1);
+
+	const history = useNavigate();
+
+	//Create this function to send API request
+	const searchTicket = (e) => {
+		e.preventDefault();
+		props.searchResult(states);
+		history(
+			`/result?dep=${states.departure}&des=${states.destination}&start_time=${states.start_time}&type=${states.type}`
+		);
+	};
 
 	//Create this function to control counter input
 	const inputFunction = (count) => {
@@ -24,11 +46,11 @@ function TrainSearch() {
 				<input
 					type="text"
 					placeholder="مبدا(شهر)"
-					value={states.source}
+					value={states.departure}
 					onChange={(e) => {
 						setStates({
 							...states,
-							source: e.target.value,
+							departure: e.target.value,
 						});
 					}}
 				/>
@@ -50,11 +72,11 @@ function TrainSearch() {
 					placeholder="تاریخ رفت"
 					onFocus={(e) => (e.target.type = "date")}
 					onBlur={(e) => (e.target.type = "text")}
-					value={states.depatureDate}
+					value={states.start_time}
 					onChange={(e) => {
 						setStates({
 							...states,
-							depatureDate: e.target.value,
+							start_time: e.target.value,
 						});
 					}}
 				/>
@@ -77,10 +99,16 @@ function TrainSearch() {
 				<CounterInput inputF={inputFunction} />
 			</div>
 			<div className="search-button">
-				<button>جستجو</button>
+				<button onClick={(e) => searchTicket(e)}>جستجو</button>
 			</div>
 		</div>
 	);
 }
 
-export default TrainSearch;
+const mapStateToProps = (state) => {
+	return {
+		ticket: state.ticket,
+	};
+};
+
+export default connect(mapStateToProps, { searchResult })(TrainSearch);

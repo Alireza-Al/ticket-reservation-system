@@ -6,12 +6,21 @@ import CounterInput from "../CounterInput";
 
 function PlaneSearch(props) {
 	//Create this state to control inputs and request to API
-	const [states, setStates] = useState({
-		departure: "",
-		destination: "",
-		start_time: "",
-		type: 2,
-	});
+	const [states, setStates] = useState(
+		props.params
+			? {
+					departure: props.params.departure,
+					destination: props.params.destination,
+					start_time: props.params.start_time,
+					type: props.params.type,
+			  }
+			: {
+					departure: "",
+					destination: "",
+					start_time: "",
+					type: 2,
+			  }
+	);
 
 	//Create this state to control number of passengers
 	const [numOfPassengers, setNumOfPassengers] = useState(1);
@@ -24,6 +33,7 @@ function PlaneSearch(props) {
 		history(
 			`/result?dep=${states.departure}&des=${states.destination}&start_time=${states.start_time}&et=${states.end_time}&type=${states.type}`
 		);
+		window.location.reload();
 	};
 
 	//Create this function to control counter input
@@ -63,7 +73,7 @@ function PlaneSearch(props) {
 					placeholder="تاریخ رفت"
 					onFocus={(e) => (e.target.type = "date")}
 					onBlur={(e) => (e.target.type = "text")}
-					value={states.depatureDate}
+					value={states.start_time}
 					onChange={(e) => {
 						setStates({
 							...states,
