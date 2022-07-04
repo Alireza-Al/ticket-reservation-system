@@ -6,6 +6,7 @@ import SearchResult from '../pages/resultPage/SerachResult';
 import ReservationResult from '../pages/resultPage/ReservationResult';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from '../pages/dashboard/Dashboard';
+import CompleteInfo from '../pages/auth/CompleteInfo';
 import jwt_decode from 'jwt-decode';
 import { useState } from 'react';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/result" element={<SearchResult />} />
         <Route path="/reserve" element={<ReservationResult />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route path="/completeInfo/:id" element={<CompleteInfo />} />
       </Routes>
     </div>
   );

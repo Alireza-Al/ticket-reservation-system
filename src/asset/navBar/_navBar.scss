@@ -83,3 +83,22 @@
     width: 150.5px;
     height: 50.5px;
 }
+
+.massage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $home-search-box-background;
+    color: white;
+    direction: rtl;
+    display: none;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.massage.active{
+    display: flex;
+}
