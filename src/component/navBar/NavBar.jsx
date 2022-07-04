@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Icon from "../../tracketIcon/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,12 +9,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import getUserInfo from "../../data/actions/user/getUserInfo";
+import { useNavigate } from "react-router-dom";
 
 function NavBar(props) {
+
+	const [type, setType] = useState(0)
 
 	useEffect(() => {
 		props.getUserInfo();
 	}, []);
+
 
 	return (
 		<nav className="navbar">
@@ -25,7 +29,9 @@ function NavBar(props) {
 					</i>
 				</li>
 				<li className="nav-item">
-					<a href="/#plane" className="plane-text">
+					<a href={`/?type=${type}`} className="plane-text" onClick={() => {
+						setType(0)
+					}}>
 						پرواز
 					</a>
 					<span className="plane-icon">
@@ -33,7 +39,9 @@ function NavBar(props) {
 					</span>
 				</li>
 				<li className="nav-item">
-					<a href="/#train" className="train-text">
+					<a href={`/?type=${type}`} className="train-text" onClick={() => {
+						setType(1)
+					}}>
 						قطار
 					</a>
 					<span className="train-icon">
@@ -41,7 +49,9 @@ function NavBar(props) {
 					</span>
 				</li>
 				<li className="nav-item">
-					<a href="/#bus" className="bus-text">
+					<a href={`/?type=${type}`} className="bus-text" onClick={() => {
+						setType(2)
+					}}>
 						اتوبوس
 					</a>
 					<span className="bus-icon">
