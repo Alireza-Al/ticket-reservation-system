@@ -20,26 +20,26 @@ function SearchBox() {
     })
 
     useEffect(() => {
-        let type = params.get('type') 
+        let type = params.get('type')
         if (type == 0) {
             setState({
-                plane:true,
-                train:false,
-                bus:false
+                plane: true,
+                train: false,
+                bus: false
             })
         }
         else if (type == 1) {
             setState({
-                plane:false,
-                train:true,
-                bus:false
+                plane: false,
+                train: true,
+                bus: false
             })
         }
         else {
             setState({
-                plane:false,
-                train:false,
-                bus:true
+                plane: false,
+                train: false,
+                bus: true
             })
         }
     }, [])
@@ -75,9 +75,9 @@ function SearchBox() {
                                     })
                                 }}
                                 onMouseLeave={() => {
-                                    setShakeState(
-                                        { plane: false }
-                                        )
+                                    setShakeState({
+                                        plane: false
+                                    })
                                 }}
                             >
                                 <span id='plane' className="plane-icon">
