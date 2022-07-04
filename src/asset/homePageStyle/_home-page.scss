@@ -8,7 +8,7 @@
     height: 500px;
 }
 
-// search-box background (the orange one)
+// search-box background (the outer box)
 .search-box-back {
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@
     transition: background 0.5s ease;
 }
 
-// search-box self (the yellow one)
+// search-box self (the inner box)
 .search-box-self {
     width: 80%;
     height: 300px;
@@ -31,15 +31,12 @@
 .item-selection-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: row-reverse;
     width: 100%;
     height: 100px;
 }
 
-.train-selector-container {
-    margin: 0px 150px;
-}
 // the stuff in all three selectors
 .plane-selector-container,
 .train-selector-container,
@@ -78,7 +75,6 @@
 
 .slot-container {
     display: flex;
-    flex-direction: row;
     direction: rtl;
     align-items: center;
     justify-content: start;
@@ -127,13 +123,14 @@
     display: flex;
     direction: rtl;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     .col {
         display: flex;
         width: 15%;
         .icon {
             font-size: 2.5rem;
             color: #a3a3a3;
-            margin-top: .9rem;
+            margin-top: 0.9rem;
         }
         .text-cont {
             line-height: 1rem;
