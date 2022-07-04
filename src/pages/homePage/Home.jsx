@@ -7,6 +7,7 @@ import { faTwitter, faInstagram, faLinkedin, faTelegram } from '@fortawesome/fre
 import { faCircleDollarToSlot, faComment, faEarthAsia, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
+	
 	return (
 		<div className="home">
 			<SearchBox />
@@ -125,7 +126,7 @@ function Home() {
 				<div className="right-side">
 					<p>تماس با ما</p>
 					<div className="link-to-social-media">
-						<FontAwesomeIcon className='hhh' icon={faTwitter} />
+						<FontAwesomeIcon icon={faTwitter} />
 						<FontAwesomeIcon icon={faInstagram} />
 						<FontAwesomeIcon icon={faLinkedin} />
 						<FontAwesomeIcon icon={faTelegram} />
