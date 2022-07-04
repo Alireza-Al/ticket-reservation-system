@@ -19,7 +19,7 @@ function NavBar(props) {
 		<>
 			{props.user.length !== 0 ? (
 				<div
-					className={`massage ${
+					className={`message ${
 						props.user[0].isRegistered ? "active" : ""
 					}`}
 				>
