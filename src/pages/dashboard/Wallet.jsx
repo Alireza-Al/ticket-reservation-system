@@ -5,7 +5,7 @@ function Wallet() {
 	const [walletNumber, setWalletNumber] = useState(0);
 
 	let walletId = null;
-	const [credit, setCredit] = useState(0);
+	const [credit, setCredit] = useState(null);
 
 	useEffect(() => {
 
@@ -69,7 +69,7 @@ function Wallet() {
 			<div className="price-input">
 				<p>موجودی کیف پول:</p>
 				{
-					credit !==0 ?
+					credit !== null ?
 					(
 						 <p>{credit}</p>
 					):(
