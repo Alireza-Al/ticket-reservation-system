@@ -112,6 +112,77 @@
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .slot-container {
+        input, button {
+            width: 100px;
+        }    
+    }
+}
+@media only screen and (max-width: 800px) {
+    .search-box-container {
+        height: 400px;
+    }
+    .search-box-back {
+        height: 300px;
+    }
+    .search-box-self{
+        margin-top: 150px;
+        height: 250px;
+    }
+    .slot-container {
+        padding: {
+            top: 30px;
+            right:30px;
+            left: 30px; 
+        };
+        div {
+            margin-left: 10px;
+        }
+        input, button {
+            width: 80px;
+        }    
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .plane-selector-container,
+    .train-selector-container,
+    .bus-selector-container {
+        span {
+            font-size: 1.5rem;
+        }
+        button {
+            font-size: 1rem;
+        }
+     }
+    .slot-container {
+        div {
+            margin: 0;
+        }
+        input, button {
+            font-size: .5rem;
+            width: 40px;
+            height: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .plane-selector-container,
+    .train-selector-container,
+    .bus-selector-container {
+        width: 30%;
+        span {
+            font-size: 1.2rem;
+        }
+        button {
+            font-size: .8rem;
+        }
+     }
+
+}
+
 .divider {
     width: 100%;
     height: 5px;
