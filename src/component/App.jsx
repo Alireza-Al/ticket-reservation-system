@@ -7,8 +7,6 @@ import ReservationResult from '../pages/resultPage/ReservationResult';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from '../pages/dashboard/Dashboard';
 import CompleteInfo from '../pages/auth/CompleteInfo';
-import jwt_decode from 'jwt-decode';
-import { useState } from 'react';
 import ErrorPage from '../pages/p404/ErrorPage';
 
 function App() {
