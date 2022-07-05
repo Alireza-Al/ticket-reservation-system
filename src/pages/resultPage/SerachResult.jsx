@@ -52,6 +52,19 @@ function SearchResult(props) {
 		}
 	}, [params.type]);
 
+	//create this variable for ticket type
+	let ticketType = "";
+	if(params.type === 0){
+		ticketType = "اتوبوس";
+	}
+	else if(params.type === 1){
+		ticketType = "قطار";
+	}
+	else{
+		ticketType = "هواپیما";
+	}
+
+
 	// Create this function to close or open div
 	const closedDiv = () => {
 		if (closed) {
@@ -90,6 +103,7 @@ function SearchResult(props) {
 				</div>
 			</div>
 			<div className="results">
+				{results !== null &&  <h2>{`بلیط ${ticketType} ${params.departure} به ${params.destination}`}</h2>}
 				{results === null ? (
 					<h1>Loading...</h1>
 				) : (
