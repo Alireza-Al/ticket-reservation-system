@@ -212,52 +212,40 @@
     height: 400px;
     background-color: white;
     direction: rtl;
-    .right-side {
-        font-family: $global-font-family;
-        display: flex;
-        flex-direction: column;
+    overflow: hidden;
+    font-family: $global-font-family;
+    background-color: $home-login-background;
+    justify-content: space-between;
+    .text-stuff-container {
         color: white;
-        font-size: large;
-        padding: {
-            top: 40px;
-            right: 50px;
-        }
-        width: 60%;
-        background-color: $home-login-background;
-        border-radius: 168px 0px 0px 0px;
-        .link-to-social-media {
-            display: flex;
-            justify-content: space-between;
-            width: 15%;
-        }
-        p {
-            margin-top: 30px;
-        }
-        .address {
-            margin-top: 50px;
-        }
+        padding: 30px 50px;
+        font-size: 1.5rem;
     }
-    .left-side {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        width: 40%;
+    .icon-container {
+        height: 260px;
         background-color: white;
-        .icon-container {
-            height: 267px;
-            background-color: white;
-            padding: 70px 150px;
-            border-radius: 0px 0px 128px 0px;
-            position: absolute;
+        padding: 70px 150px;
+        border-radius: 0px 0px 128px 0px;
+        @media only screen and (max-width: 1300px) {
+            padding: 70px 100px;
+        }
+        @media only screen and (max-width: 1100px) {
+            padding: 70px 50px;
             .tracketIcon {
-                width: 350px;
-                height: 150px;
+                width: 250px;
+                height: 100px;
             }
         }
-        .part-under-icon {
-            // the red like part under the tracket icon
-            background-color: $home-login-background;
-            height: 125px;
+        @media only screen and (max-width: 800px) {
+            padding: 70px 10px;
+            .tracketIcon {
+                max-width: 350px;
+                max-width: 150px;
+            }
+        }
+        .tracketIcon {
+            width: 350px;
+            height: 150px;
         }
     }
 }

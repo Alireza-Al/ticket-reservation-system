@@ -123,7 +123,7 @@ function Home() {
 				</div>
 			</div>
 			<footer className="footer">
-				<div className="right-side">
+				<div className="text-stuff-container">
 					<p>تماس با ما</p>
 					<div className="link-to-social-media">
 						<FontAwesomeIcon icon={faTwitter} />
@@ -135,12 +135,8 @@ function Home() {
 						آدرس : دانشگاه تبریز، دانشکده مهندسی برق و کامپیوتر
 					</p>
 				</div>
-				<div className="left-side">
-					<div className="icon-container">
-						<Icon />
-					</div>
-					<div className="part-under-icon"></div>
-					{/*the red part under the icon*/}
+				<div className="icon-container">
+					<Icon />
 				</div>
 			</footer>
 		</div>
