@@ -7,7 +7,7 @@ import { faTwitter, faInstagram, faLinkedin, faTelegram } from '@fortawesome/fre
 import { faCircleDollarToSlot, faComment, faEarthAsia, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
-	
+
 	return (
 		<div className="home">
 			<SearchBox />
@@ -30,7 +30,7 @@ function Home() {
 							تضمین بهترین قیمت
 						</p>
 						<p className="desc">
-							بیشترین تخفیف ها برای رزرو هتل و خرید بلیط
+							رزرو هتل و خربد بلیط سریع و راحت
 						</p>
 					</div>
 				</div>
