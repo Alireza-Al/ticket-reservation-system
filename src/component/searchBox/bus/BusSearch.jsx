@@ -2,22 +2,23 @@ import React, { useState } from "react";
 import searchResult from "./../../../data/actions/ticket/searchResult";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ValidateAndAccept } from "../BoxesValidation";
 
 function BusSearch(props) {
 	const [states, setStates] = useState(
 		props.params
 			? {
-					departure: props.params.departure,
-					destination: props.params.destination,
-					start_time: props.params.start_time,
-					type: props.params.type,
-			  }
+				departure: props.params.departure,
+				destination: props.params.destination,
+				start_time: props.params.start_time,
+				type: props.params.type,
+			}
 			: {
-					departure: "",
-					destination: "",
-					start_time: "",
-					type: 0,
-			  }
+				departure: "",
+				destination: "",
+				start_time: "",
+				type: 0,
+			}
 	);
 
 	const history = useNavigate();
@@ -73,7 +74,16 @@ function BusSearch(props) {
 				/>
 			</div>
 			<div className="search-button">
-				<button onClick={(e) => searchTicket(e)}>جستجو</button>
+				<button onClick={(e) => {
+					if (ValidateAndAccept(states)) {
+						searchTicket(e)
+					}
+					else {
+						alert('فیلد ها خالی هستند')
+					}
+				}}>
+					جستجو
+				</button>
 			</div>
 		</div>
 	);

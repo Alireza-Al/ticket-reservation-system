@@ -10,8 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import getUserInfo from "../../data/actions/user/getUserInfo";
+import { useNavigate } from "react-router-dom";
 
 function NavBar(props) {
+	const [type, setType] = useState(0);
+
 	useEffect(() => {
 		props.getUserInfo();
 	}, []);
@@ -68,7 +71,13 @@ function NavBar(props) {
 							</span>
 						</li>
 						<li className="nav-item">
-							<a href="/#train" className="train-text">
+							<a
+								href={`/?type=${type}`}
+								className="train-text"
+								onClick={() => {
+									setType(1);
+								}}
+							>
 								قطار
 							</a>
 							<span className="train-icon">
@@ -76,7 +85,13 @@ function NavBar(props) {
 							</span>
 						</li>
 						<li className="nav-item">
-							<a href="/#bus" className="bus-text">
+							<a
+								href={`/?type=${type}`}
+								className="bus-text"
+								onClick={() => {
+									setType(2);
+								}}
+							>
 								اتوبوس
 							</a>
 							<span className="bus-icon">
@@ -84,6 +99,7 @@ function NavBar(props) {
 							</span>
 						</li>
 					</ul>
+
 					<li className="login-register">
 						{props.user.length !== 0 ? (
 							<>

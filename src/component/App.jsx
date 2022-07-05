@@ -9,6 +9,7 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import CompleteInfo from '../pages/auth/CompleteInfo';
 import jwt_decode from 'jwt-decode';
 import { useState } from 'react';
+import ErrorPage from '../pages/p404/ErrorPage';
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/reserve" element={<ReservationResult />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route path="/completeInfo/:id" element={<CompleteInfo />} />
+        <Route path='*' element={<ErrorPage />}/>
       </Routes>
     </div>
   );

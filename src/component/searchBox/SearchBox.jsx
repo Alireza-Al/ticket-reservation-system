@@ -1,18 +1,48 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBus, faPlane, faTrain } from '@fortawesome/free-solid-svg-icons'
 import PlaneSearch from './plane/PlaneSearch';
 import TrainSearch from './train/TrainSearch';
 import BusSearch from './bus/BusSearch'
+import { useLocation } from 'react-router-dom';
 
 
 function SearchBox() {
+
+    let location = useLocation()
+
+    const params = new URLSearchParams(location.search)
 
     const [state, setState] = useState({
         plane: true,
         train: false,
         bus: false
     })
+
+    useEffect(() => {
+        let type = params.get('type')
+        if (type == 0) {
+            setState({
+                plane: true,
+                train: false,
+                bus: false
+            })
+        }
+        else if (type == 1) {
+            setState({
+                plane: false,
+                train: true,
+                bus: false
+            })
+        }
+        else {
+            setState({
+                plane: false,
+                train: false,
+                bus: true
+            })
+        }
+    }, [])
 
     const [shakeState, setShakeState] = useState({})
 
@@ -45,7 +75,9 @@ function SearchBox() {
                                     })
                                 }}
                                 onMouseLeave={() => {
-                                    setShakeState({ plane: false })
+                                    setShakeState({
+                                        plane: false
+                                    })
                                 }}
                             >
                                 <span id='plane' className="plane-icon">
