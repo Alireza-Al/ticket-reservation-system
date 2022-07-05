@@ -63,7 +63,13 @@ function NavBar(props) {
 					</li>
 					<ul className={`nav-items ${isOpen ? "opened" : "closed"}`}>
 						<li className="nav-item">
-							<a href="/#plane" className="plane-text">
+							<a
+								href={`/?type=${type}`}
+								className="plane-text"
+								onClick={() => {
+									setType(0);
+								}}
+							>
 								پرواز
 							</a>
 							<span className="plane-icon">
