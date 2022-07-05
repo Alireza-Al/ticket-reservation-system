@@ -3,21 +3,23 @@
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    height: 75px;
-    padding: 11px 10px;
+    height: 100px;
+    // padding: 11px 10px;
     .nav-menu {
         // wrapper of all menu-items inside nav
         width: 100%;
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 0px 30px;
         li {
             // all li should have these styles
             display: inline;
             list-style-type: none;
-            padding: {
-                top: 5px;
-            }
+            // padding: {
+            //     top: 5px;
+            // }
             cursor: pointer;
             a {
                 // all a in li should have these styles
@@ -37,10 +39,19 @@
                 padding-top: 5px;
             }
         }
-        .nav-item {
+        .nav-items {
             // all nav-items except the tracket icon
-            margin-top: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 45%;
+            height: 100%;
+            padding: 0px;
         }
+        // .nav-item {
+        //     // all nav-items except the tracket icon
+        //     margin-top: 11px;
+        // }
         .plane-text {
             &:hover {
                 color: $plane-icon-color;
@@ -62,7 +73,7 @@
             color: $bus-icon-color;
         }
         .login-register {
-            margin-top: 11px;
+            // margin-top: 11px;
             .user-icon {
                 color: $home-login-background;
             }
@@ -75,6 +86,56 @@
         }
     }
 }
+
+.message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: $home-search-box-background;
+    color: white;
+    direction: rtl;
+    display: none;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.message.active {
+    display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar {
+        position: relative;
+        .nav-menu {
+            .bar {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .nav-items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                background-color: green;
+                position: absolute;
+                width: 30%;
+                height: calc(60vh - 75px);
+                top: 80%;
+                right: 2%;
+                display: none;
+            }
+
+            .nav-items.opened {
+                display: flex;
+            }
+        }
+    }
+}
+
 
 .tracketIcon {
     width: 150.5px;

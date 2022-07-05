@@ -28,36 +28,38 @@ function NavBar(props) {
 						<Icon />
 					</i>
 				</li>
-				<li className="nav-item">
-					<a href={`/?type=${type}`} className="plane-text" onClick={() => {
-						setType(0)
-					}}>
-						پرواز
-					</a>
-					<span className="plane-icon">
-						<FontAwesomeIcon icon={faPlane} />
-					</span>
-				</li>
-				<li className="nav-item">
-					<a href={`/?type=${type}`} className="train-text" onClick={() => {
-						setType(1)
-					}}>
-						قطار
-					</a>
-					<span className="train-icon">
-						<FontAwesomeIcon icon={faTrain} />
-					</span>
-				</li>
-				<li className="nav-item">
-					<a href={`/?type=${type}`} className="bus-text" onClick={() => {
-						setType(2)
-					}}>
-						اتوبوس
-					</a>
-					<span className="bus-icon">
-						<FontAwesomeIcon icon={faBus} />
-					</span>
-				</li>
+				<div className="nav-items">
+					<li className="nav-item">
+						<a href={`/?type=${type}`} className="plane-text" onClick={() => {
+							setType(0)
+						}}>
+							پرواز
+						</a>
+						<span className="plane-icon">
+							<FontAwesomeIcon icon={faPlane} />
+						</span>
+					</li>
+					<li className="nav-item">
+						<a href={`/?type=${type}`} className="train-text" onClick={() => {
+							setType(1)
+						}}>
+							قطار
+						</a>
+						<span className="train-icon">
+							<FontAwesomeIcon icon={faTrain} />
+						</span>
+					</li>
+					<li className="nav-item">
+						<a href={`/?type=${type}`} className="bus-text" onClick={() => {
+							setType(2)
+						}}>
+							اتوبوس
+						</a>
+						<span className="bus-icon">
+							<FontAwesomeIcon icon={faBus} />
+						</span>
+					</li>
+				</div>
 				<li className="login-register">
 					{props.user.length !== 0 ? (
 						<>
