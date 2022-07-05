@@ -135,6 +135,7 @@
                 border: 2px solid black;
                 outline: none;
                 position: absolute;
+                min-width: 300px;
                 width: 30%;
                 height: calc(60vh - 75px);
                 top: 75%;
@@ -147,4 +148,17 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 550px) {
+    .navbar{
+        .login-register{
+            a{
+                .title{
+                    display: none;
+                }
+            }
+        }
+    }
+    
 }
