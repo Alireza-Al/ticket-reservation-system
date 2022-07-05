@@ -7,6 +7,7 @@ import {
 	faTrain,
 	faUser,
 	faBars,
+	faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import getUserInfo from "../../data/actions/user/getUserInfo";
@@ -54,6 +55,7 @@ function NavBar(props) {
 					<FontAwesomeIcon
 						icon={faBars}
 						className="bar"
+						size="2x"
 						onClick={() => handleOpen()}
 					/>
 					<li className="tracket-icon">
@@ -63,7 +65,13 @@ function NavBar(props) {
 					</li>
 					<ul className={`nav-items ${isOpen ? "opened" : "closed"}`}>
 						<li className="nav-item">
-							<a href="/#plane" className="plane-text">
+							<a
+								href={`/?type=${type}`}
+								className="plane-text"
+								onClick={() => {
+									setType(0);
+								}}
+							>
 								پرواز
 							</a>
 							<span className="plane-icon">
@@ -103,18 +111,24 @@ function NavBar(props) {
 					<li className="login-register">
 						{props.user.length !== 0 ? (
 							<>
-								<span className="user-icon">
-									<FontAwesomeIcon icon={faUser} />
-								</span>
-								<a href="/dashboard">{`${props.user[0].firstName} عزیز خوش آمدید`}</a>
+								<a href="/dashboard">
+									<span className="user-icon">
+										<FontAwesomeIcon icon={faUser} />
+									</span>
+									<span className="title">
+										{`${props.user[0].firstName} عزیز خوش آمدید`}
+									</span>
+								</a>
 							</>
 						) : (
 							<>
-								<span className="user-icon">
-									<FontAwesomeIcon icon={faUser} />
-								</span>
 								<a href="/users/login" className="">
-									ورود/ثبت نام
+									<span className="user-icon">
+										<FontAwesomeIcon
+											icon={faArrowRightToBracket}
+										/>
+									</span>
+									<span className="title">ورود/ثبت نام</span>
 								</a>
 							</>
 						)}
