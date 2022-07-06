@@ -22,7 +22,7 @@
 // search-box self (the inner box)
 .search-box-self {
     width: 80%;
-    height: 300px;
+    min-height: 250px;
     background-color: #fed000;
     margin-top: 250px;
     border-radius: 63px;
@@ -46,9 +46,10 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
     // will do it for all the icons
     span {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .plane-icon {
         color: $plane-icon-color;
@@ -59,13 +60,13 @@
     .bus-icon {
         color: $bus-icon-color;
     }
-    button {
+    a {
         // all the search box toggle buttons
         font-family: $global-font-family;
         background-color: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        text-decoration: none;
+        color: gray;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -77,7 +78,8 @@
     display: flex;
     direction: rtl;
     align-items: center;
-    justify-content: start;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: {
         top: 55px;
         right: 60px;
@@ -85,13 +87,14 @@
     }
     div {
         // all divs in all three search boxes
-        margin-left: 25px;
+        margin-left: 10px;
     }
     input {
         // all inputs in all three search boxes
-        width: 150px;
+        width: 115px;
         border: 1px solid $home-login-background;
         font-family: $global-font-family;
+        margin: 10px 0px;
         &::placeholder {
             text-align: center;
         }
@@ -101,7 +104,7 @@
         background-color: $home-login-background;
         border: none;
         font-family: $global-font-family;
-        width: 150px;
+        width: 115px;
         height: 47px;
         border-radius: 13px;
         cursor: pointer;
@@ -112,75 +115,24 @@
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
     .slot-container {
-        input, button {
-            width: 100px;
-        }    
-    }
-}
-@media only screen and (max-width: 800px) {
-    .search-box-container {
-        height: 400px;
-    }
-    .search-box-back {
-        height: 300px;
-    }
-    .search-box-self{
-        margin-top: 150px;
-        height: 250px;
-    }
-    .slot-container {
-        padding: {
-            top: 30px;
-            right:30px;
-            left: 30px; 
-        };
-        div {
-            margin-left: 10px;
+        input {
+            width: 100%;
         }
-        input, button {
-            width: 80px;
-        }    
-    }
-}
-
-@media only screen and (max-width:600px) {
-    .plane-selector-container,
-    .train-selector-container,
-    .bus-selector-container {
-        span {
-            font-size: 1.5rem;
+        .counter {
+            width: 100%;
+            input {
+                width: 100%;
+            }
         }
-        button {
-            font-size: 1rem;
-        }
-     }
-    .slot-container {
-        div {
-            margin: 0;
-        }
-        input, button {
-            font-size: .5rem;
-            width: 40px;
-            height: 20px;
+        .search-button {
+            width: 70%;
+            button {
+                width: 100%;
+            }
         }
     }
-}
-
-@media only screen and (max-width:450px) {
-    .plane-selector-container,
-    .train-selector-container,
-    .bus-selector-container {
-        width: 30%;
-        span {
-            font-size: 1.2rem;
-        }
-        button {
-            font-size: .8rem;
-        }
-     }
-
 }
 
 .divider {
@@ -195,9 +147,11 @@
     direction: rtl;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    @media only screen and (max-width: 1100px) {
+        margin-top: 100px;
+    }
     .col {
         display: flex;
-        flex-wrap: wrap;
         .icon {
             font-size: 2.5rem;
             color: #a3a3a3;
@@ -295,7 +249,7 @@
     .icon-container {
         height: 260px;
         background-color: white;
-        padding: 70px 150px;
+        padding: 70px 120px;
         border-radius: 0px 0px 128px 0px;
         @media only screen and (max-width: 1300px) {
             padding: 70px 100px;
