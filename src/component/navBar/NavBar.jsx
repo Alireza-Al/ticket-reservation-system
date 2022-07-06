@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import getUserInfo from "../../data/actions/user/getUserInfo";
-import { useNavigate } from "react-router-dom";
 
 function NavBar(props) {
 	const [type, setType] = useState(0);
