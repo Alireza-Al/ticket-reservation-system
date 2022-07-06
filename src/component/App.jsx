@@ -8,8 +8,6 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import CompleteInfo from "../pages/auth/CompleteInfo";
 import FullInfoOfPurchaseHis from "../pages/dashboard/FullInfoOfPurchaseHis";
-import jwt_decode from "jwt-decode";
-import { useState } from "react";
 import ErrorPage from "../pages/p404/ErrorPage";
 
 function App() {
