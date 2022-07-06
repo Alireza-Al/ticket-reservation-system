@@ -7,7 +7,7 @@ import { faTwitter, faInstagram, faLinkedin, faTelegram } from '@fortawesome/fre
 import { faCircleDollarToSlot, faComment, faEarthAsia, faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
-	
+
 	return (
 		<div className="home">
 			<SearchBox />
@@ -30,7 +30,7 @@ function Home() {
 							تضمین بهترین قیمت
 						</p>
 						<p className="desc">
-							بیشترین تخفیف ها برای رزرو هتل و خرید بلیط
+							رزرو هتل و خربد بلیط سریع و راحت
 						</p>
 					</div>
 				</div>
@@ -123,7 +123,7 @@ function Home() {
 				</div>
 			</div>
 			<footer className="footer">
-				<div className="right-side">
+				<div className="text-stuff-container">
 					<p>تماس با ما</p>
 					<div className="link-to-social-media">
 						<FontAwesomeIcon icon={faTwitter} />
@@ -135,12 +135,8 @@ function Home() {
 						آدرس : دانشگاه تبریز، دانشکده مهندسی برق و کامپیوتر
 					</p>
 				</div>
-				<div className="left-side">
-					<div className="icon-container">
-						<Icon />
-					</div>
-					<div className="part-under-icon"></div>
-					{/*the red part under the icon*/}
+				<div className="icon-container">
+					<Icon />
 				</div>
 			</footer>
 		</div>
