@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
-function PurchaseHistory() {
+function PurchaseHistory(props) {
 	const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
 
 	const config = {
@@ -29,7 +29,7 @@ function PurchaseHistory() {
 		<div className="container-tic">
 			{states ? states.map((state, index) => {
 				return (
-					<div className="ticket-result">
+					<div className="ticket-result" key={index}>
 						{/* this div have all information of the ticket */}
 						<div className="info">
 							{/* this div have information of the company */}
@@ -49,14 +49,12 @@ function PurchaseHistory() {
 								</div>
 								<div className="row">
 									<h4>شماره بلیط:{state.ticket.code}</h4>
-									<h5>
-										{state.ticket.count}صندلی باقی مانده
-									</h5>
 								</div>
 							</div>
 						</div>
 						<div className="price">
 							<h3>{state.ticket.price}ریال</h3>
+							<a href={`/dashboard/purchaseHistory/${state.id}`}>اطلاعات بیشتر...</a>
 						</div>
 					</div>
 				);
