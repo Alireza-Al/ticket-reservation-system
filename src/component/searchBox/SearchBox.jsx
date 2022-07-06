@@ -21,21 +21,21 @@ function SearchBox() {
 
     useEffect(() => {
         let type = params.get('type')
-        if (type == 0) {
+        if (type === '0') {
             setState({
                 plane: true,
                 train: false,
                 bus: false
             })
         }
-        else if (type == 1) {
+        else if (type === '1') {
             setState({
                 plane: false,
                 train: true,
                 bus: false
             })
         }
-        else {
+        else if (type === '2'){
             setState({
                 plane: false,
                 train: false,
@@ -57,7 +57,7 @@ function SearchBox() {
                 <div className="search-box-self">
                     <div className="item-selection-container">
                         <div className="plane-selector-container">  {/* plane toggle btn*/}
-                            <button className="plane-search-box-toggle"
+                            <a href='/?type=0' className="plane-search-box-toggle"
                                 onClick={() => {
                                     if (state.plane) {
                                         return
@@ -84,10 +84,10 @@ function SearchBox() {
                                     <FontAwesomeIcon icon={faPlane} shake={shakeState.plane} />
                                 </span>
                                 بلیط هواپیما
-                            </button>
+                            </a>
                         </div>
                         <div className="train-selector-container">  {/* train toggle btn*/}
-                            <button className="train-search-box-toggle" onClick={() => {
+                            <a href='/?type=1' className="train-search-box-toggle" onClick={() => {
                                 if (state.train) {
                                     return
                                 } else {
@@ -114,10 +114,10 @@ function SearchBox() {
                                     <FontAwesomeIcon icon={faTrain} shake={shakeState.train} />
                                 </span>
                                 بلیط قطار
-                            </button>
+                            </a>
                         </div>
                         <div className="bus-selector-container">  {/* bus toggle btn*/}
-                            <button className="bus-search-box-toggle"
+                            <a href='/?type=2' className="bus-search-box-toggle"
                                 onClick={() => {
                                     if (state.bus) {
                                         return
@@ -144,7 +144,7 @@ function SearchBox() {
                                     <FontAwesomeIcon icon={faBus} shake={shakeState.bus} />
                                 </span>
                                 بلیط اتوبوس
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div className="divider" style={{
