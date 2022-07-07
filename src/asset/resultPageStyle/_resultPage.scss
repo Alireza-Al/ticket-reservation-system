@@ -10,7 +10,7 @@
 	// This is the header of page styles
 	.result-header {
 		width: 100%;
-		max-height: 260px;
+		max-height: 1000px;
 		display: flex;
 		flex-direction: column;
 		background-color: $global-text-color;
@@ -19,7 +19,7 @@
 		// This is the search filter styles
 		.search-box {
 			width: 100%;
-			max-height: 150px;
+			min-height: 30px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -28,7 +28,7 @@
 
 			.search-b {
 				width: 100%;
-				height: 120px;
+				min-height: 120px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
