@@ -8,7 +8,7 @@ function EditUserData(props) {
 		e.preventDefault();
 
 		if (!ValidateAndAccept()) {
-			alert('fields are empty')
+			alert('فیلد ها خالی هستند')
 			return
 		}
 
