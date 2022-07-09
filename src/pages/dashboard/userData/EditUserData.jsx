@@ -96,7 +96,11 @@ function EditUserData(props) {
 					/>
 				</div>
 				<div className="item-cont">
-					<button>بازگشت</button>
+					<button onClick={() => {
+						props.editState(false)
+					}}>
+						بازگشت
+					</button>
 					<button>ذخیره</button>
 				</div>
 			</form>
