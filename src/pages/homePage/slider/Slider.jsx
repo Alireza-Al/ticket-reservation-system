@@ -11,20 +11,22 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 function Slider() {
 
     const [swiperSlides, setSwiperSlides] = useState(3);
+    
 
-
-    // this function will change the number of slides to be shown after a certain number of innerWidth
-    window.addEventListener("resize", () => {
-        if (window.innerWidth >= '650' && window.innerWidth <= '900') {
-            setSwiperSlides(2)
-        }
-        if (window.innerWidth < '650') {
-            setSwiperSlides(1)
-        }
-        if (window.innerWidth > '900') {
-            setSwiperSlides(3)
-        }
-    })
+    useEffect(() => {
+        // this function will change the number of slides to be shown after a certain number of innerWidth
+        window.addEventListener("resize",() => {
+            if (window.innerWidth >= '650' && window.innerWidth <= '900') {
+                setSwiperSlides(2)
+            }
+            if (window.innerWidth < '650') {
+                setSwiperSlides(1)
+            }
+            if (window.innerWidth > '900') {
+                setSwiperSlides(3)
+            }
+        })
+    },[])
 
     return (
         <div className='slider'>
