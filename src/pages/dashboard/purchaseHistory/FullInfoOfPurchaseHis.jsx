@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ticketReceipt from "../../data/actions/ticket/ticketReceipt";
+import ticketReceipt from "../../../data/actions/ticket/ticketReceipt";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

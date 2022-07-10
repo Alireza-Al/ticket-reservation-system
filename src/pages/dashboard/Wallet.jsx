@@ -7,6 +7,8 @@ function Wallet() {
 	let walletId = null;
 	const [credit, setCredit] = useState(null);
 
+	const [err, setErr] = useState('')
+
 	useEffect(() => {
 
 		const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
@@ -70,11 +72,11 @@ function Wallet() {
 				<p>موجودی کیف پول:</p>
 				{
 					credit !== null ?
-					(
-						 <p>{credit}</p>
-					):(
-						<h3>Loading...</h3>
-					)
+						(
+							<p>{credit}</p>
+						) : (
+							<h3>Loading...</h3>
+						)
 				}
 			</div>
 			<div className="price-input">
@@ -89,10 +91,18 @@ function Wallet() {
 							setWalletNumber(value);
 						}}
 					/>
+					<p>{err}</p>
 				</label>
 				<button
 					className="submit-wallet-change"
-					onClick={() => charge()}
+					onClick={() => {
+						if (!walletNumber) {
+							setErr('لطفا مبلغ را وارد کنید')
+							return
+						}
+						setErr('')
+						charge()
+					}}
 				>
 					شارژ
 				</button>

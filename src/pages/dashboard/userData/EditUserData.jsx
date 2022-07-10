@@ -6,6 +6,12 @@ function EditUserData(props) {
 
 	const HandleSubmit = (e) => {
 		e.preventDefault();
+
+		if (!ValidateAndAccept()) {
+			alert('فیلد ها خالی هستند')
+			return
+		}
+
 		const token = `Token ${JSON.parse(localStorage.getItem("token"))}`;
 
 		const config = {
@@ -27,6 +33,13 @@ function EditUserData(props) {
 			.then(window.location.reload())
 			.catch((err) => console.error(err));
 	};
+
+	const ValidateAndAccept = () => {
+		if (!info.name || !info.lastName || !info.idNum) {
+			return false
+		}
+		return true
+	}
 
 	return (
 		<div className="edit-cont">
@@ -83,7 +96,11 @@ function EditUserData(props) {
 					/>
 				</div>
 				<div className="item-cont">
-					<button>بازگشت</button>
+					<button onClick={() => {
+						props.editState(false)
+					}}>
+						بازگشت
+					</button>
 					<button>ذخیره</button>
 				</div>
 			</form>

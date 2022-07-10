@@ -31,6 +31,10 @@ function UserData(props) {
 		setUserInfo(props.user[0]);
 	}, [props.user]);
 
+	const EditUserDataToggler = (state) => {
+		seteditUserDataState(state)
+	}
+
 	return (
 		<div>
 			{
@@ -40,6 +44,7 @@ function UserData(props) {
 						<EditUserData
 							containerNames={containerNames}
 							id={userInfo.id}
+							editState={EditUserDataToggler}
 						/>
 						:
 						<div className="container-user">
