@@ -1,276 +1,363 @@
 .home {
-    transform: all 0.5s ease;
+	transform: all 0.5s ease;
 }
 
 .search-box-container {
-    background-color: white;
-    width: 100%;
-    height: 500px;
+	background-color: white;
+	width: 100%;
+	height: 500px;
 }
 
 // search-box background (the outer box)
 .search-box-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 400px;
-    border-radius: 162px 0;
-    transition: background 0.5s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 400px;
+	border-radius: 162px 0;
+	transition: background 0.5s ease;
 }
 
 // search-box self (the inner box)
 .search-box-self {
-    width: 80%;
-    min-height: 250px;
-    background-color: #fed000;
-    margin-top: 250px;
-    border-radius: 63px;
+	width: 80%;
+	min-height: 250px;
+	background-color: #fed000;
+	margin-top: 250px;
+	border-radius: 63px;
 }
 
 .item-selection-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row-reverse;
-    width: 100%;
-    height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row-reverse;
+	width: 100%;
+	height: 100px;
 }
 
 // the stuff in all three selectors
 .plane-selector-container,
 .train-selector-container,
 .bus-selector-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    // will do it for all the icons
-    span {
-        font-size: 1.8rem;
-    }
-    .plane-icon {
-        color: $plane-icon-color;
-    }
-    .train-icon {
-        color: $train-icon-color;
-    }
-    .bus-icon {
-        color: $bus-icon-color;
-    }
-    a {
-        // all the search box toggle buttons
-        font-family: $global-font-family;
-        background-color: transparent;
-        font-size: 1rem;
-        text-decoration: none;
-        color: gray;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	// will do it for all the icons
+	span {
+		font-size: 1.8rem;
+	}
+	.plane-icon {
+		color: $plane-icon-color;
+	}
+	.train-icon {
+		color: $train-icon-color;
+	}
+	.bus-icon {
+		color: $bus-icon-color;
+	}
+	a {
+		// all the search box toggle buttons
+		font-family: $global-font-family;
+		background-color: transparent;
+		font-size: 1rem;
+		text-decoration: none;
+		color: gray;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .slot-container {
-    display: flex;
-    direction: rtl;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: {
-        top: 55px;
-        right: 60px;
-        left: 60px;
-    }
-    div {
-        // all divs in all three search boxes
-        margin-left: 10px;
-    }
-    input {
-        // all inputs in all three search boxes
-        width: 115px;
-        border: 1px solid $home-login-background;
-        font-family: $global-font-family;
-        margin: 10px 0px;
-        &::placeholder {
-            text-align: center;
-        }
-    }
-    button {
-        // search btn
-        background-color: $home-login-background;
-        border: none;
-        font-family: $global-font-family;
-        width: 115px;
-        height: 47px;
-        border-radius: 13px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        &:hover {
-            background-color: $button-color;
-        }
-    }
+	display: flex;
+	direction: rtl;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: {
+		top: 55px;
+		right: 60px;
+		left: 60px;
+	}
+	div {
+		// all divs in all three search boxes
+		margin-left: 10px;
+	}
+	input {
+		// all inputs in all three search boxes
+		width: 115px;
+		border: 1px solid $home-login-background;
+		font-family: $global-font-family;
+		margin: 10px 0px;
+		&::placeholder {
+			text-align: center;
+		}
+	}
+	button {
+		// search btn
+		background-color: $home-login-background;
+		border: none;
+		font-family: $global-font-family;
+		width: 115px;
+		height: 47px;
+		border-radius: 13px;
+		cursor: pointer;
+		transition: background 0.3s ease;
+		&:hover {
+			background-color: $button-color;
+		}
+	}
 }
 
 @media only screen and (max-width: 1100px) {
-    .slot-container {
-        input {
-            width: 100%;
-        }
-        .counter {
-            width: 100%;
-            input {
-                width: 100%;
-            }
-        }
-        .search-button {
-            width: 70%;
-            button {
-                width: 100%;
-            }
-        }
-    }
+	.slot-container {
+		input {
+			width: 100%;
+		}
+		.counter {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+		.search-button {
+			width: 70%;
+			button {
+				width: 100%;
+			}
+		}
+	}
 }
 
 .divider {
-    width: 100%;
-    height: 5px;
-    background-color: $home-login-background;
-    transition: background 0.3s ease;
+	width: 100%;
+	height: 5px;
+	background-color: $home-login-background;
+	transition: background 0.3s ease;
 }
 
 .services {
-    display: flex;
-    direction: rtl;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    @media only screen and (max-width: 1100px) {
-        margin-top: 100px;
-    }
-    .col {
-        display: flex;
-        .icon {
-            font-size: 2.5rem;
-            color: #a3a3a3;
-            margin-top: 0.9rem;
-        }
-        .text-cont {
-            line-height: 1rem;
-            margin-right: 8px;
-            .topic {
-                font-size: 1.1rem;
-                font-weight: 700;
-            }
-            .desc {
-                color: #a3a3a3;
-            }
-        }
-    }
+	display: flex;
+	direction: rtl;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	@media only screen and (max-width: 1100px) {
+		margin-top: 100px;
+	}
+	.col {
+		display: flex;
+		.icon {
+			font-size: 2.5rem;
+			color: #a3a3a3;
+			margin-top: 0.9rem;
+		}
+		.text-cont {
+			line-height: 1rem;
+			margin-right: 8px;
+			.topic {
+				font-size: 1.1rem;
+				font-weight: 700;
+			}
+			.desc {
+				color: #a3a3a3;
+			}
+		}
+	}
 }
 
 .slider-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .slider {
-        width: 80%;
-        height: 600px;
-        background-color: white;
-        .imgLarge {
-            max-height: 400px;
-            min-height: 400px;
-            width: 100%;
-            border-radius: 30px;
-        }
-    }
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.slider {
+		width: 80%;
+		height: 600px;
+		background-color: white;
+		.imgLarge {
+			max-height: 400px;
+			min-height: 400px;
+			width: 100%;
+			border-radius: 30px;
+		}
+	}
 }
 
 .swiper {
-    width: 100%;
-    height: 40%;
+	width: 100%;
+	height: 40%;
 }
 
 .swiper-slide {
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-    }
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+	}
 }
 
 .about-us {
-    direction: rtl;
-    padding: 2rem 5rem;
-    text-align: justify;
-    .paragragh {
-        p {
-            padding: 1.5rem;
-            line-height: 1.5rem;
-            font-size: 1rem;
-        }
-    }
+	direction: rtl;
+	padding: 2rem 5rem;
+	text-align: justify;
+	.paragragh {
+		p {
+			padding: 1.5rem;
+			line-height: 1.5rem;
+			font-size: 1rem;
+		}
+	}
 }
 
 .footer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 400px;
-    background-color: white;
-    direction: rtl;
-    overflow: hidden;
-    font-family: $global-font-family;
-    background-color: $home-login-background;
-    justify-content: space-between;
-    .text-stuff-container {
-        color: white;
-        padding: 30px 50px;
-        font-size: 1.5rem;
-    }
-    .icon-container {
-        height: 260px;
-        background-color: white;
-        padding: 70px 120px;
-        border-radius: 0px 0px 128px 0px;
-        @media only screen and (max-width: 1300px) {
-            padding: 70px 100px;
-        }
-        @media only screen and (max-width: 1100px) {
-            padding: 70px 50px;
-            .tracketIcon {
-                width: 250px;
-                height: 100px;
-            }
-        }
-        @media only screen and (max-width: 800px) {
-            padding: 70px 10px;
-            .tracketIcon {
-                max-width: 350px;
-                max-width: 150px;
-            }
-        }
-        .tracketIcon {
-            width: 350px;
-            height: 150px;
-        }
-    }
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	min-height: 400px;
+	height: 100%;
+	background-color: white;
+	direction: rtl;
+	overflow: hidden;
+	font-family: $global-font-family;
+	background-color: $home-login-background;
+	justify-content: space-between;
+	.text-stuff-container {
+		color: white;
+		padding: 30px 20px;
+		font-size: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-around;
+
+		.top {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-around;
+			border-bottom: 1px solid #000;
+
+			p {
+				align-self: flex-end;
+				cursor: pointer;
+				&:hover {
+					color: #000;
+					text-decoration: underline;
+				}
+				transition: all 0.3s linear;
+			}
+		}
+
+		.link-to-social-media {
+			width: 70%;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			font-size: 30px;
+
+			.media-icon {
+				cursor: pointer;
+
+				&:nth-child(1):hover {
+					color: #1da1f2;
+				}
+				&:nth-child(2):hover {
+					color: #c32aa3;
+				}
+				&:nth-child(3):hover {
+					color: #0a66c2;
+				}
+				&:nth-child(4):hover {
+					color: #0088cc;
+				}
+			}
+		}
+
+		.services {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+            margin-top: 0;
+            gap: 20px;
+
+			.item {
+				display: flex;
+				align-items: center;
+				gap: 3px;
+                font-size: 20px;
+				text-decoration: none;
+				color: #fff;
+
+				&:hover {
+					color: #000;
+				}
+
+				transition: all 0.3s linear;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 768px) {
+		.text-stuff-container {
+			font-size: 1.2rem;
+		}
+		.link-to-social-media {
+			width: 100%;
+		}
+	}
+
+	.icon-container {
+		min-width: 30%;
+		height: 260px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: white;
+		padding: 70px 120px;
+		border-radius: 0px 0px 128px 0px;
+		@media only screen and (max-width: 1300px) {
+			padding: 70px 100px;
+		}
+		@media only screen and (max-width: 1100px) {
+			padding: 70px 50px;
+			.tracketIcon {
+				width: 250px;
+				height: 100px;
+			}
+		}
+		@media only screen and (max-width: 800px) {
+			padding: 70px 10px;
+			.tracketIcon {
+				max-width: 350px;
+				max-width: 150px;
+			}
+		}
+		.tracketIcon {
+			width: 100%;
+			height: 150px;
+		}
+	}
 }
