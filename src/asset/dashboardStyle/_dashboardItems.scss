@@ -65,6 +65,24 @@ button {
 	}
 }
 
+@media only screen and (max-width:800px) {
+	.walllet-container {
+		h3 {
+			padding: 0px 1rem;
+			font-size: 1rem;
+		}
+		.price-input {
+			label {
+				input {
+					width: 120px;
+				}
+			}
+			button {
+				width: 120px;
+			}
+		}
+	}
+}
 
 .edit-cont {
 	form {
