@@ -63,7 +63,7 @@ function Wallet() {
 	};
 
 	return (
-		<div>
+		<div className="walllet-container">
 			<h3>
 				برای شارژ کردن کیف پول، ابتدا مبلغ را وارد کنید، سپس دکمه ”شارژ”
 				را بزنید.
