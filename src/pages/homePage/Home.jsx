@@ -161,7 +161,7 @@ function Home() {
 						/>
 					</div>
 					<p>خدمات</p>
-					<div className="services">
+					<div className="footer-services">
 						<div>
 							<a className="item" href={`/?type=${0}`}>
 								بلیط هواپیما
