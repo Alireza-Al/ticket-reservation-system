@@ -11,6 +11,12 @@ function DashboardMenu(props) {
     const [small, setSmall] = useState(false)
 
     useEffect(() => {
+        if (window.innerWidth <= "700") {
+            setSmall(true)
+        }
+        else {
+            setSmall(false)
+        }
         window.addEventListener("resize", () => {
             let width = window.innerWidth
             if (width <= "700") {
