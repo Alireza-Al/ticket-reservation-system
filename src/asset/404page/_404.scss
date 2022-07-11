@@ -1,0 +1,104 @@
+.error-page {
+	width: 100%;
+	height: calc(100vh - 100px);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: gray;
+
+	.palne {
+		width: 100%;
+		height: 33%;
+		background-color: #87ceeb;
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 10%;
+			width: 150px;
+			height: 150px;
+
+			animation: move 5s linear infinite;
+		}
+
+		h1 {
+			position: absolute;
+			color: #fff;
+			top: 20%;
+			left: -80px;
+			animation: move 5s linear infinite;
+		}
+	}
+
+	.train {
+		width: 100%;
+		height: 33%;
+		background-color: #9b7653;
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 20%;
+			width: 200px;
+			height: 100px;
+
+			animation: move 10s linear infinite;
+		}
+		p {
+			position: absolute;
+			color: #fff;
+			font-size: 25px;
+			top: 35%;
+			left: -280px;
+			animation: move 10s linear infinite;
+		}
+	}
+
+	.bus {
+		width: 100%;
+		height: 33%;
+		background-color: gray;
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 5%;
+			width: 200px;
+			height: 100px;
+
+			animation: move 7s linear infinite;
+		}
+
+		a {
+			position: absolute;
+			color: #fff;
+			font-size: 25px;
+			top: 20%;
+			left: -140px;
+			text-decoration: none;
+			animation: move 7s linear infinite;
+
+			&:hover {
+				color: $home-login-background;
+			}
+		}
+
+		.line {
+			position: absolute;
+			width: 100%;
+			height: 0;
+			box-sizing: border-box;
+			border: 5px dashed white;
+			top: 50%;
+		}
+	}
+}
+
+@keyframes move {
+	from {
+		transform: translateX(-100px);
+	}
+	to {
+		transform: translatex(1600px);
+	}
+}
