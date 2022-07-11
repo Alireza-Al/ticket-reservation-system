@@ -7,7 +7,7 @@ import ReservationResult from "../pages/resultPage/ReservationResult";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import CompleteInfo from "../pages/auth/CompleteInfo";
-import FullInfoOfPurchaseHis from "../pages/dashboard/FullInfoOfPurchaseHis";
+import FullInfoOfPurchaseHis from "../pages/dashboard/purchaseHistory/FullInfoOfPurchaseHis";
 import ErrorPage from "../pages/p404/ErrorPage";
 
 function App() {

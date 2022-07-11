@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import DashboardMenu from './dashboardMenu/DashboardMenu'
-import PurchaseHistory from './PurchaseHistory'
+import PurchaseHistory from './purchaseHistory/PurchaseHistory'
 import UserData from './userData/UserData'
 import Wallet from './Wallet'
 

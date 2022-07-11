@@ -3,7 +3,6 @@ import EditUserData from "./EditUserData";
 import { connect } from "react-redux";
 import getUserInfo from "../../../data/actions/user/getUserInfo";
 import { useNavigate } from "react-router-dom";
-import { Spinner } from "react-bootstrap";
 
 function UserData(props) {
 
@@ -31,15 +30,20 @@ function UserData(props) {
 		setUserInfo(props.user[0]);
 	}, [props.user]);
 
+	const EditUserDataToggler = (state) => {
+		seteditUserDataState(state)
+	}
+
 	return (
 		<div>
 			{
-				props.user.length === 0 ? <Spinner animation="border" variant="warning" />
+				props.user.length === 0 ? <span>...loading</span>
 					:
 					editUserDataState ?
 						<EditUserData
 							containerNames={containerNames}
 							id={userInfo.id}
+							editState={EditUserDataToggler}
 						/>
 						:
 						<div className="container-user">
