@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import Icon from "../../tracketIcon/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import EditUserData from "./EditUserData";
 import { connect } from "react-redux";
