@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDown, faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import PlaneSearch from "../../component/searchBox/plane/PlaneSearch";

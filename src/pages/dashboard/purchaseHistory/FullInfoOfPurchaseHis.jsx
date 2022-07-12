@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { connect } from "react-redux";
 import ticketReceipt from "../../../data/actions/ticket/ticketReceipt";
 import { useState, useEffect } from "react";
@@ -9,8 +10,6 @@ function FullInfoOfPurchaseHis(props) {
 	const [customer, setCustomer] = useState(null);
 	const [trackingCode, setTrackingCode] = useState(null);
 	const [ticket, setTicket] = useState(null);
-
-	const [isOpen, setIsOpen] = useState(false);
 	const [isSelected, setIsSelected] = useState(null);
 
 	const { id } = useParams();
