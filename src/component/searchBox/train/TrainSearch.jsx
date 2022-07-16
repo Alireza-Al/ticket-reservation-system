@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import searchResult from "../../../data/actions/ticket/searchResult";
 import CounterInput from "../CounterInput";
 import { useNavigate } from "react-router-dom";
-import { ValidateAndAccept } from "../BoxesValidation";
 
 function TrainSearch(props) {
 	const [states, setStates] = useState(
@@ -101,12 +100,7 @@ function TrainSearch(props) {
 			</div>
 			<div className="search-button">
 				<button onClick={(e) => {
-					if (ValidateAndAccept(states)) {
 						searchTicket(e)
-					}
-					else {
-						alert('فیلد ها خالی هستند')
-					}
 				}}>
 					جستجو
 				</button>
