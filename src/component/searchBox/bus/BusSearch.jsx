@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import searchResult from "./../../../data/actions/ticket/searchResult";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { ValidateAndAccept } from "../BoxesValidation";
 
 function BusSearch(props) {
 	const [states, setStates] = useState(
@@ -75,12 +74,7 @@ function BusSearch(props) {
 			</div>
 			<div className="search-button">
 				<button onClick={(e) => {
-					if (ValidateAndAccept(states)) {
 						searchTicket(e)
-					}
-					else {
-						alert('فیلد ها خالی هستند')
-					}
 				}}>
 					جستجو
 				</button>

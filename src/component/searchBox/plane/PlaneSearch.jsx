@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import searchResult from "../../../data/actions/ticket/searchResult";
 import CounterInput from "../CounterInput";
-import { ValidateAndAccept } from "../BoxesValidation";
 
 function PlaneSearch(props) {
 	//Create this state to control inputs and request to API
@@ -102,12 +101,7 @@ function PlaneSearch(props) {
 			</div>
 			<div className="search-button">
 				<button onClick={(e) => {
-					if (ValidateAndAccept(states)) {
 						searchTicket(e)
-					}
-					else {
-						alert('فیلد ها خالی هستند')
-					}
 				}
 				}>
 					جستجو
